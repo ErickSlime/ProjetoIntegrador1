@@ -1,0 +1,132 @@
+
+<h1 class="titulo2"><mat-icon style="color: #03502b; text-align: center;">whatshot</mat-icon> GreenTech</h1>
+
+
+<div class="conteudo">
+    <div class="box">
+        <div class="content">
+            <h2>1</h2>
+            <h3>Plantas</h3>
+            <p>Acessar Catálogo de Plantas</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="content">
+            <h2>2</h2>
+            <h3>Pragas</h3>
+            <p>Acessar Catálogo de Pragas</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="content">
+            <h2>3</h2>
+            <h3>Dicas</h3>
+            <p>Acessar Catálogo de Dicas</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="content">
+            <h2>4</h2>
+            <h3>Videos</h3>
+            <p>Acessar Catálogo de Videos</p>
+        </div>
+    </div>
+</div>
+
+<div class="titulo">
+    <h1>Plantas</h1>
+</div>
+
+<div class="container responsive-grid">
+    <mat-card *ngFor="let card of cards()">
+
+        <img mat-card-image src="https://super.abril.com.br/wp-content/uploads/2019/12/supawat-kampanna_eyeem_gettyimages_plantas-sons-estressadas_fb.png" >
+       
+        <mat-card-title class="centered-text"> {{card.titulo}} </mat-card-title>
+
+        <mat-card-actions class="centered-text">
+            <button mat-button color="primary">Descriçãozinha</button>
+        </mat-card-actions>
+
+        <mat-card-footer>
+            <button mat-flat-button color="primary" style="width: 100%; padding: 16px;">Ver mais ...</button>
+        </mat-card-footer>
+    </mat-card>
+</div>
+
+<div class="titulo">
+    <h1>Dicas</h1>
+</div>
+
+<div class="container responsive-grid">
+    <mat-card *ngFor="let card of cards()">
+
+        <img mat-card-image src="https://marketingpoliticohoje.com.br/wp-content/uploads/2019/03/dicas-para-quem-esta%CC%81-comec%CC%A7ando-no-marketing-poli%CC%81tico.jpg" >
+       
+        <mat-card-title class="centered-text"> {{card.titulo}} </mat-card-title>
+
+        <mat-card-actions class="centered-text">
+            <button mat-button color="primary">Descriçãozinha</button>
+        </mat-card-actions>
+
+        <mat-card-footer>
+            <button mat-flat-button color="primary" style="width: 100%; padding: 16px;">Ver mais ...</button>
+        </mat-card-footer>
+    </mat-card>
+</div>
+
+<div class="titulo">
+    <h1>Pragas</h1>
+</div>
+
+<div class="container responsive-grid">
+    <mat-card *ngFor="let card of cards()">
+
+        <img mat-card-image src="https://aquitemfofoca.com.br/wp-content/uploads/2023/06/partido-dos-trabalhadores.jpg" >
+       
+        <mat-card-title class="centered-text"> {{card.titulo}} </mat-card-title>
+
+        <mat-card-actions class="centered-text">
+            <button mat-button color="primary">Descriçãozinha</button>
+        </mat-card-actions>
+
+        <mat-card-footer>
+            <button mat-flat-button color="primary" style="width: 100%; padding: 16px;">Ver mais ...</button>
+        </mat-card-footer>
+    </mat-card>
+</div>
+
+<div class="titulo">
+    <h1>Videos</h1>
+</div>
+
+<div class="container responsive-grid">
+    <mat-card *ngFor="let card of cards()">
+
+        <img mat-card-image src="https://img.freepik.com/vetores-premium/icone-de-video-tutorial-emblema-etiqueta-botao-claquete-com-reprodutor-de-video-online-em-execucao-projeto-de-filme-ou-cinema-online-de-reprodutor-de-video-em-claquete-editor-de-video-ou-producao-de-filmes-cinema-online_435184-625.jpg" >
+       
+        <mat-card-title class="centered-text"> {{card.titulo}} </mat-card-title>
+
+        <mat-card-actions class="centered-text">
+            <button mat-button color="primary">Descriçãozinha</button>
+        </mat-card-actions>
+
+        <mat-card-footer>
+            <button mat-flat-button color="primary" style="width: 100%; padding: 16px;">Ver mais ...</button>
+        </mat-card-footer>
+    </mat-card>
+</div>
+
+
+
+
+<h1>Justificativa do Site</h1>
+
+<h2>Os agricultores familiares muitas vezes enfrentam desafios como acesso limitado a recursos, conhecimento técnicos e tecnologias avançadas.
+     Ao criar um aplicativo que ofereça orientações personalizadas, dicas sazonais e insights baseado em dados, 
+     é possível capacitar esses agricultores a otimizar seus processos de cultivo, melhorar a qualidade das colheitas e minimizar o desperdício.</h2>
+   <h2> Além disso, promover práticas agrícolas sustentáveis entre os agricultores familiares contribui para a preservação dos recursos naturais,
+     a conservação da biodiversidade e a redução dos impactos ambientais negativos. Através desse sistema, os agricultores terão acesso a informação
+      sobre técnicas de conservação do solo, manejo integrado de pragas e uso eficiente de recursos hídricos, permitindo-lhes adotar abordagens mais
+       responsáveis e ecologicamente equilibradas.
+    </h2>

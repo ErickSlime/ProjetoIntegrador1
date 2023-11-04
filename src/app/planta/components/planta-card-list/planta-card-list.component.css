@@ -1,0 +1,29 @@
+.container {
+    padding: 20px;
+}
+
+.responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 50px;
+}
+
+
+.centered-text {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo {
+    color: black; /* Cor do texto */
+    padding: 30px; /* Espaçamento interno */
+    text-align: left; /* Alinhar o texto ao centro */
+  }
+  
+  /* Estilos para o título h1 no cabeçalho */
+  .titulo h1 {
+    font-size: 50px; /* Tamanho da fonte */
+    margin: 0; /* Remover margens padrão */
+  }

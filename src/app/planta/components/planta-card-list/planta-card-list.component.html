@@ -1,0 +1,21 @@
+
+<div class="titulo">
+    <h1>Plantas</h1>
+</div>
+
+<div class="container responsive-grid">
+    <mat-card *ngFor="let card of cards()">
+
+        <img mat-card-image src="https://super.abril.com.br/wp-content/uploads/2019/12/supawat-kampanna_eyeem_gettyimages_plantas-sons-estressadas_fb.png" >
+       
+        <mat-card-title class="centered-text"> {{card.titulo}} </mat-card-title>
+
+        <mat-card-actions class="centered-text">
+            <button mat-button color="primary">Descriçãozinha</button>
+        </mat-card-actions>
+
+        <mat-card-footer>
+            <a routerLink="/plantas/view/"><button mat-flat-button color="primary" style="width: 100%; padding: 16px;">Ver mais ...</button></a>
+        </mat-card-footer>
+    </mat-card>
+</div>

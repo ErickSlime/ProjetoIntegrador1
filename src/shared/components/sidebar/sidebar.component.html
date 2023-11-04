@@ -1,0 +1,19 @@
+<mat-drawer-container class="container">
+
+    <mat-drawer #drawer  mode="side" opened>
+        <mat-toolbar>
+            <span>Menu</span>
+        </mat-toolbar>
+        <mat-nav-list>
+            <mat-list-item routerLink="/home/main"><p><mat-icon>home</mat-icon> Home</p></mat-list-item>
+            <mat-list-item><p><mat-icon>nature_people</mat-icon> Dicas</p></mat-list-item>
+            <mat-list-item routerLink="/plantas/card-list"><p><mat-icon>nature</mat-icon> Plantas</p></mat-list-item>
+            <mat-list-item><p><mat-icon>play_circle_outline</mat-icon> Videos</p></mat-list-item>
+            <mat-list-item><p><mat-icon>bubble_chart</mat-icon> Pragas</p></mat-list-item>
+        </mat-nav-list>
+    </mat-drawer>
+
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
