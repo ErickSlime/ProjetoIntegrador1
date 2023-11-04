@@ -19,7 +19,7 @@ main {
 }
 
 .planta {
-    max-width: 600px;
+    max-width: 60%;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
@@ -28,7 +28,7 @@ main {
 }
 
 .planta img {
-    max-width: 100%;
+    max-width: 65%;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 10px;

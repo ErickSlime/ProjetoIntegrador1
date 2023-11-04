@@ -19,7 +19,7 @@
 .titulo {
     color: black; /* Cor do texto */
     padding: 30px; /* Espaçamento interno */
-    text-align: left; /* Alinhar o texto ao centro */
+    text-align: center; /* Alinhar o texto ao centro */
   }
   
   /* Estilos para o título h1 no cabeçalho */

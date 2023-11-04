@@ -1,4 +1,5 @@
 import { Component, OnInit, Signal, signal } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
 import { Planta } from 'src/app/models/planta.model';
 
 type Card = {
@@ -14,6 +15,10 @@ export class PlantaCardListComponent implements OnInit {
 
   cards = signal<Card[]> ([]);
   plantas: Planta[] = [];
+
+  totalRegistros = 17;
+  pageSize = 10;
+  pagina = 0;
 
   constructor() {}
 

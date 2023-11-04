@@ -6,6 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { PlantaCardListComponent } from './components/planta-card-list/planta-card-list.component';
 import { PlantaViewComponent } from './components/planta-view/planta-view.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { PlantaViewComponent } from './components/planta-view/planta-view.compon
     CommonModule,
     PlantaRoutingModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatPaginatorModule
   ]
 })
 export class PlantaModule { }
