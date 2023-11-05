@@ -1,0 +1,26 @@
+
+<div class="titulo">
+    <h1><mat-icon class="my-big-icon">nature</mat-icon> Catálogo de Pragas</h1>
+</div>
+
+<div class="barra-de-pesquisa">
+    <input type="text" class="input-de-pesquisa" placeholder="O que você está procurando?">
+  </div>
+  
+
+<div class="container responsive-grid">
+    <mat-card *ngFor="let card of cards()">
+
+        <img mat-card-image src="https://byeinsect.com.br/wp-content/uploads/2023/02/ENQUANTO-VOCE-PENSA-EM-CURTIR-O-CLIMA-QUENTE-ELAS-SURGEM-PARA-TE-DAR-DOR-DE-CABECA.-PARA-AS-PRAGAS-NO-VERAO-O-CALOR-E-BENEFICIO.jpg" >
+       
+        <mat-card-title class="centered-text"> {{card.titulo}} </mat-card-title>
+
+        <mat-card-actions class="centered-text">
+            <button mat-button color="primary">Descriçãozinha</button>
+        </mat-card-actions>
+
+        <mat-card-footer>
+            <a routerLink="/pragas/view/"><button mat-flat-button color="primary" style="width: 100%; padding: 16px;">Ver mais ...</button></a>
+        </mat-card-footer>
+    </mat-card>
+</div>

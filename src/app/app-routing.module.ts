@@ -19,6 +19,24 @@ const routes: Routes = [
     path: 'usuarios', loadChildren:
       () => import('./usuario/usuario.module')
         .then(m => m.UsuarioModule)
+  },
+
+  {
+    path: 'pragas', loadChildren:
+      () => import('./praga/praga.module')
+        .then(m => m.PragaModule)
+  },
+
+  {
+    path: 'dicas', loadChildren:
+      () => import('./dica/dica.module')
+        .then(m => m.DicaModule)
+  },
+
+  {
+    path: 'videos', loadChildren:
+      () => import('./video/video.module')
+        .then(m => m.VideoModule)
   }
 
 ];
