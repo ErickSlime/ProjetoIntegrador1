@@ -1,0 +1,41 @@
+<div class="titulo">
+    <h1><mat-icon class="my-big-icon">nature</mat-icon> Login de Usuário</h1>
+</div>
+
+
+<div class="form-container">
+    <div class="row">
+                <mat-form-field appearance="outline" class="half-width-input">
+            <mat-label>Login</mat-label>
+            <input matInput type="text" formControlName="login" />
+            <mat-error *ngIf="formGroup.get('login') && formGroup.get('login')?.invalid && formGroup.get('login')?.touched">
+                Login é Obrigatório
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="half-width-input">
+            <mat-label>Senha</mat-label>
+            <input matInput type="password" formControlName="Senha" />
+            <mat-error *ngIf="formGroup.get('Senha') && formGroup.get('Senha')?.invalid && formGroup.get('Senha')?.touched">
+                Senha é Obrigatória
+            </mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="button-container">
+        <mat-card-actions>
+          <div class="button-wrapper">
+            <button mat-raised-button color="primary" (click)="entrar()">
+              Entrar
+            </button>
+          </div>
+          <div class="button-wrapper">
+            <button mat-raised-button routerLink="/usuarios/new">
+              Criar conta
+            </button>
+          </div>
+        </mat-card-actions>
+      </div>
+      
+</div>
+

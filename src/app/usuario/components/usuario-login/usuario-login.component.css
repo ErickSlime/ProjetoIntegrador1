@@ -1,0 +1,116 @@
+.container {
+    padding: 20px;
+}
+
+.responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 50px;
+}
+
+
+.centered-text {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo {
+    color: black; /* Cor do texto */
+    padding: 30px; /* Espaçamento interno */
+    text-align: center; /* Alinhar o texto ao centro */
+  }
+  
+  /* Estilos para o título h1 no cabeçalho */
+  .titulo h1 {
+    font-size: 50px; /* Tamanho da fonte */
+    margin: 0; /* Remover margens padrão */
+  }
+
+  .my-big-icon {
+    font-size: 26px;
+  }
+
+
+
+  /* Estilo para o formulário de cadastro de usuários */
+/* Estilo para o formulário de cadastro de usuários */
+.form-container {
+  background-color: #f0f0f0; /* Cor de fundo branco */
+  padding: 20px;
+  border-radius: 10px; /* Borda arredondada */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  width: 500px; /* Tamanho do formulário */
+  margin: 0 auto; /* Centralize horizontalmente */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centralize as caixas de preenchimento verticalmente */
+}
+
+/* Estilo para os campos de formulário */
+.mat-form-field {
+  width: 100%; /* Largura total do contêiner */
+  margin-bottom: 20px;
+}
+
+/* Estilo para as linhas de caixas de formulário */
+.row {
+  display: flex;
+  gap: 10px; /* Espaçamento horizontal entre as caixas */
+  flex-wrap: wrap; /* Quebra para a próxima linha se o espaço for insuficiente */
+}
+
+/* Estilo para as caixas de formulário de meia largura */
+.half-width-input {
+  flex: 1; /* Expanda as caixas para preencher o espaço igualmente */
+  width: calc(50% - 5px); /* Define a largura como metade com um espaço entre elas */
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .button-wrapper {
+    margin-right: 10px; /* Ajuste o valor do margin-right conforme desejado */
+  }
+
+/* Estilo para o espaço entre os botões */
+.button-space {
+    margin-right: 10px; /* Adicione margem à direita para criar espaço */
+}
+
+/* Estilo para as etiquetas dos campos */
+.mat-form-field-label {
+  color: #00a000; /* Cor verde clara para as etiquetas */
+}
+
+/* Estilo para os campos de entrada */
+.mat-input-element {
+  color: #333333; /* Cor do texto */
+}
+
+/* Estilo para os erros do formulário */
+.mat-error {
+  color: #ff0000; /* Cor vermelha para mensagens de erro */
+  font-size: 14px;
+}
+
+/* Estilo para o botão de envio (se houver) */
+.mat-button {
+  background-color: #00a000; /* Cor de fundo verde clara */
+  color: #fff; /* Cor do texto branco */
+}
+
+/* Estilo para o botão de envio (hover) */
+.mat-button:hover {
+  background-color: #008000; /* Cor de fundo verde mais escura ao passar o mouse */
+}
+
+/* Estilo para o contêiner de email e senha */
+.email-senha-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
