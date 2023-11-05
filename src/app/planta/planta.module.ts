@@ -7,6 +7,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { PlantaCardListComponent } from './components/planta-card-list/planta-card-list.component';
 import { PlantaViewComponent } from './components/planta-view/planta-view.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     PlantaRoutingModule,
     MatCardModule,
     MatButtonModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatIconModule,
+    MatFormFieldModule
   ]
 })
 export class PlantaModule { }

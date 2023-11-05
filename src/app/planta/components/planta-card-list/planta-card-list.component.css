@@ -27,3 +27,27 @@
     font-size: 50px; /* Tamanho da fonte */
     margin: 0; /* Remover margens padrão */
   }
+
+  .my-big-icon {
+    font-size: 26px;
+  }
+
+  .barra-de-pesquisa {
+    width: 80%;
+    padding-left: 20%;
+    height: 40px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .input-de-pesquisa {
+    width: 80%;
+    height: 40px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333333;
+  }
+  

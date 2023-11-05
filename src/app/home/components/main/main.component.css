@@ -4,6 +4,7 @@
 }
 
 .titulo2{
+  padding-top: 25px;
     text-align: center;
     font-size: 50px;
     font-family: 'Karla', sans-serif;
@@ -137,7 +138,7 @@ h2{
     margin: 0 auto;
     overflow: hidden;
     position: relative;
-    border: 2px solid black;
+    border: 3px solid #03502b;
     border-radius: 5px 10px 15px 20px;
 
   }
@@ -184,4 +185,29 @@ h2{
     }
   }
 
+  .justificativa {
+    background: linear-gradient(135deg, #004222, #496e1f);
+    border: solid #03502b;
+    border-radius: 10px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    width: 82%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+  }
+  
+  .justificativa h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 550;
+    margin-bottom: 10px;
+    color: whitesmoke;
+  }
+  
+  .justificativa p {
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: whitesmoke;
+  }
   
