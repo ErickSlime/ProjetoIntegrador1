@@ -62,28 +62,32 @@ export class MainComponent implements OnInit{
       { id:0, nome: 'Planta 1', descricao: 'sadasd'},
       { id:1, nome: 'Planta 2', descricao: 'sadasd'},
       { id:2, nome: 'Planta 3', descricao: 'sadasd'},
-      { id:3, nome: 'Planta 4', descricao: 'sadasd'}
+      { id:3, nome: 'Planta 4', descricao: 'sadasd'},
+      { id:4, nome: 'Planta 5', descricao: 'sadasd'}
     );
 
     this.pragas.push(
       { id:0, nome: 'Praga 1', descricao: 'sadasd'},
       { id:1, nome: 'Praga 2', descricao: 'sadasd'},
       { id:2, nome: 'Praga 3', descricao: 'sadasd'},
-      { id:3, nome: 'Praga 4', descricao: 'sadasd'}
+      { id:3, nome: 'Praga 4', descricao: 'sadasd'},
+      { id:4, nome: 'Praga 5', descricao: 'sadasd'}
     );
 
     this.dicas.push(
       { id:0, nome: 'Dica 1', descricao: 'sadasd'},
       { id:1, nome: 'Dica 2', descricao: 'sadasd'},
       { id:2, nome: 'Dica 3', descricao: 'sadasd'},
-      { id:3, nome: 'Dica 4', descricao: 'sadasd'}
+      { id:3, nome: 'Dica 4', descricao: 'sadasd'},
+      { id:4, nome: 'Dica 5', descricao: 'sadasd'}
     );
 
     this.videos.push(
       { id:0, nome: 'Video 1', descricao: 'sadasd'},
       { id:1, nome: 'Video 2', descricao: 'sadasd'},
       { id:2, nome: 'Video 3', descricao: 'sadasd'},
-      { id:3, nome: 'Video 4', descricao: 'sadasd'}
+      { id:3, nome: 'Video 4', descricao: 'sadasd'},
+      { id:4, nome: 'Video 5', descricao: 'sadasd'}
     );
 
     this.carregarCards();

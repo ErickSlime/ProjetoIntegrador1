@@ -117,7 +117,7 @@ h2{
 .responsive-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 50px;
+    gap: 40px;
 }
 
 
@@ -147,7 +147,7 @@ h2{
     overflow: hidden;
     position: relative;
     border: 3px solid #03502b;
-    border-radius: 5px 10px 15px 20px;
+    border-radius: 30px;
 
   }
   
@@ -219,4 +219,8 @@ h2{
     line-height: 1.5;
     color: whitesmoke;
   }
+  
+  .espaco{
+    padding-bottom: 70px;
+}
   
