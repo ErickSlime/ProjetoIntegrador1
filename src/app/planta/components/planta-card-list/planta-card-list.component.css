@@ -50,4 +50,13 @@
     font-weight: 400;
     color: #333333;
   }
+
+  .titulo .adicionar mat-icon {
+    color: #000;
+    font-size: 24px;
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+}
   

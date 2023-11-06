@@ -9,12 +9,22 @@ import { DicaViewComponent } from './components/dica-view/dica-view.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { DicaFormComponent } from './components/dica-form/dica-form.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
   declarations: [
     DicaCardListComponent,
-    DicaViewComponent
+    DicaViewComponent,
+    DicaFormComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +33,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatButtonModule,
     MatPaginatorModule,
     MatIconModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatTableModule,
+    MatToolbarModule,
+    MatSelectModule,
+    MatInputModule,
+    FormsModule,
+    MatDialogModule
   ]
 })
 export class DicaModule { }

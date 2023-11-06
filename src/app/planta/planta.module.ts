@@ -9,12 +9,22 @@ import { PlantaViewComponent } from './components/planta-view/planta-view.compon
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { PlantaFormComponent } from './components/planta-form/planta-form.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
   declarations: [
     PlantaCardListComponent,
-    PlantaViewComponent
+    PlantaViewComponent,
+    PlantaFormComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +33,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatButtonModule,
     MatPaginatorModule,
     MatIconModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatTableModule,
+    MatToolbarModule,
+    MatSelectModule,
+    MatInputModule,
+    FormsModule,
+    MatDialogModule
   ]
 })
 export class PlantaModule { }

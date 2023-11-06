@@ -9,12 +9,21 @@ import { VideoViewComponent } from './components/video-view/video-view.component
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { VideoFormComponent } from './components/video-form/video-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
   declarations: [
     VideoCardListComponent,
-    VideoViewComponent
+    VideoViewComponent,
+    VideoFormComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +32,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatButtonModule,
     MatPaginatorModule,
     MatIconModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatTableModule,
+    MatToolbarModule,
+    MatSelectModule,
+    MatInputModule,
+    FormsModule,
+    MatDialogModule,
+    ReactiveFormsModule
   ]
 })
 export class VideoModule { }
