@@ -12,6 +12,14 @@
     color: #03502b;
 }
 
+.teste{
+  background: linear-gradient(135deg, #014e29, #496e1f);
+  padding-bottom: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 30px;
+}
+
 h1{
     color: black;
     text-align: left;
@@ -26,9 +34,9 @@ h2{
 
 .conteudo {
     padding-top: 25px;
-    padding-left: 15%;
+    padding-left: 14%;
     position: relative;
-    width: 70%;
+    width: 72%;
     display: grid;
     grid-gap: 0 40px;
     grid-template-rows: auto;
@@ -42,7 +50,7 @@ h2{
     display: flex;
     justify-content: center; 
     align-items: center;
-    border: none;
+    border: solid #004222;
 }
 
 .conteudo .box:before{
@@ -194,6 +202,7 @@ h2{
     width: 82%;
     margin: 0 auto;
     padding-bottom: 30px;
+    margin-top: 40px;
   }
   
   .justificativa h2 {
