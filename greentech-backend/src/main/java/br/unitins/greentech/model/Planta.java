@@ -3,6 +3,8 @@ package br.unitins.greentech.model;
 import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Planta extends DefaultEntity {
@@ -12,6 +14,10 @@ public class Planta extends DefaultEntity {
     private String especie;
     private LocalDate tempoColheita;
     private String descricao;
+
+    @ManyToOne
+    @JoinColumn(name = "id_tipoSolo", nullable = false)
+    private TipoSolo tipoSolo;
 
     public String getNome() {
         return nome;
