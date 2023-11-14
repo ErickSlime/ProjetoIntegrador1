@@ -1,0 +1,92 @@
+@startuml
+
+class Planta{
+    - id: Integer
+    - nome: String
+    - imagem: String
+    - tempoColheita: DateTime
+    - descricao: String
+}
+
+class Praga{
+    - id: Integer
+    - nome: String
+    - imagem: String
+    - descricao: String
+}
+
+class Dica{
+    - id: Integer
+    - nome: String
+    - imagem: String
+    - descricao: String
+}
+
+class Video{
+    - id: Integer
+    - nome: String
+    - urlVideo: String
+    - descricao: String
+}
+
+class TipoSolo{
+    - id: Integer 
+    - nome: String
+}
+
+enum Classificacao{
+    + ARENOSO: Integer
+    + ARGILOSO: Integer
+    + SILTOSO: Integer
+}
+
+class Prevencao{
+    - id: Integer
+    - nome: String
+    - comoPrevenir: String
+}
+
+class PessoaFisica{
+    - id: Integer
+    - cpf: String
+    - idade: Integer
+    - email: String
+}
+
+class Familia{
+    - id: Integer
+    - nome: String
+    - caracteristicas: String
+}
+
+class Especie {
+    - id: Integer
+    - nome: String
+    - caracteristicas: String
+}
+
+class Usuario{
+    - id: Integer
+    - login: String
+    - senha: String
+}
+
+enum Cargo{
+    + ADMIN: Integer
+    + USER: Integer
+}
+
+Planta "*" --> "1" TipoSolo
+Planta "*" --> "*" Praga
+Planta "1" --> "1" Especie
+Praga "1" --> "1" Especie
+Especie "*" --> "1" Familia
+Dica "*" --> "1" Planta
+Planta "1" --> "*" Video
+TipoSolo "*" --> "1" Classificacao 
+Usuario --|> PessoaFisica
+Usuario "1" --> "*" Planta
+Usuario "*" --> "1" Cargo
+Praga "1" --> "*" Prevencao
+
+@enduml
