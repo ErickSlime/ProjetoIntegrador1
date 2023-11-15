@@ -46,7 +46,7 @@ class Prevencao{
     - comoPrevenir: String
 }
 
-class PessoaFisica{
+abstract class PessoaFisica{
     - id: Integer
     - cpf: String
     - idade: Integer

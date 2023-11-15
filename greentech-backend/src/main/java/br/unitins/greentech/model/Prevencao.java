@@ -20,5 +20,4 @@ public class Prevencao extends DefaultEntity {
     public void setComoPrevenir(String comoPrevenir) {
         this.comoPrevenir = comoPrevenir;
     }
-
 }

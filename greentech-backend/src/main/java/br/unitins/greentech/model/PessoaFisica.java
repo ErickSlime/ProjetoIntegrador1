@@ -1,10 +1,14 @@
 package br.unitins.greentech.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 
 @Entity
-public class PessoaFisica extends DefaultEntity {
+@Inheritance(strategy = InheritanceType.JOINED) // Herança
+public abstract class PessoaFisica extends DefaultEntity {
      
+    private String nome;
     private String cpf;
     private Integer idade;
     private String email;
@@ -27,5 +31,10 @@ public class PessoaFisica extends DefaultEntity {
     public void setEmail(String email) {
         this.email = email;
     }
-
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 }

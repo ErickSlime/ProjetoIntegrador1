@@ -7,6 +7,8 @@ public class TipoSolo extends DefaultEntity {
     
     private String nome;
 
+    private Classificacao classificacao;
+
     public String getNome() {
         return nome;
     }
@@ -15,4 +17,11 @@ public class TipoSolo extends DefaultEntity {
         this.nome = nome;
     }
 
+    public Classificacao getClassificacao() {
+        return classificacao;
+    }
+
+    public void setClassificacao(Classificacao classificacao) {
+        this.classificacao = classificacao;
+    }
 }

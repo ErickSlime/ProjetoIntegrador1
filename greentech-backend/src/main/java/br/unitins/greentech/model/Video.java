@@ -27,5 +27,4 @@ public class Video extends DefaultEntity {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-
 }

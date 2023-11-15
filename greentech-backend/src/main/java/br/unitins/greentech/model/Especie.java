@@ -1,12 +1,18 @@
 package br.unitins.greentech.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Especie extends DefaultEntity {
     
     private String nome;
     private String caracteristicas;
+
+    @ManyToOne
+    @JoinColumn(name = "id_familia", nullable = false)
+    private Familia familia;
     
     public String getNome() {
         return nome;
@@ -20,5 +26,10 @@ public class Especie extends DefaultEntity {
     public void setCaracteristicas(String caracteristicas) {
         this.caracteristicas = caracteristicas;
     }
-
+    public Familia getFamilia() {
+        return familia;
+    }
+    public void setFamilia(Familia familia) {
+        this.familia = familia;
+    }
 }

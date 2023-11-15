@@ -20,5 +20,4 @@ public class Familia extends DefaultEntity {
     public void setCaracteristicas(String caracteristicas) {
         this.caracteristicas = caracteristicas;
     }
-
 }

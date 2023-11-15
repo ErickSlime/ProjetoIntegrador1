@@ -1,5 +1,13 @@
 package br.unitins.greentech.dto;
 
-public record PragaDTO () {
+import java.util.List;
+
+public record PragaDTO (
+    String nome,
+    String nomeImagem,
+    String descricao,
+    List<Long> prevencoes,
+    Long especie
+) {
     
 }

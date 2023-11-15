@@ -1,5 +1,8 @@
 package br.unitins.greentech.dto;
 
-public record FamiliaDTO () {
+public record FamiliaDTO (
+    String nome,
+    String caracteristicas
+) {
     
 }
