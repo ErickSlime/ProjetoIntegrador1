@@ -30,6 +30,12 @@ public class EspecieImplService implements EspecieService {
     }
 
     @Override
+    public List<Especie> getAll(int page, int pageSize) {
+        
+        return especieRepository.findAll(sort).page(page, pageSize).list();
+    }
+
+    @Override
     public Especie getById(Long id) {
         
         Especie especie = especieRepository.findById(id);
@@ -104,8 +110,8 @@ public class EspecieImplService implements EspecieService {
     }
 
     @Override
-    public List<Especie> getByNome(String nome) {
+    public List<Especie> getByNome(String nome, int page, int pageSize) {
         
-        return especieRepository.findByNome(nome, sort).list();
+        return especieRepository.findByNome(nome, sort).page(page, pageSize).list();
     }
 }

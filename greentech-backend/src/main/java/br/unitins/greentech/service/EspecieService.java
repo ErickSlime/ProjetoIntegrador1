@@ -9,6 +9,8 @@ public interface EspecieService {
     
     List<Especie> getAll();
     
+    List<Especie> getAll(int page, int pageSize);
+    
     Especie getById(Long id);
 
     Especie insert(EspecieDTO especieDTO);
@@ -21,5 +23,5 @@ public interface EspecieService {
 
     Long countByNome(String nome);
 
-    List<Especie> getByNome(String nome);
+    List<Especie> getByNome(String nome, int page, int pageSize);
 }

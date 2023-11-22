@@ -9,6 +9,8 @@ public interface FamiliaService {
     
     List<Familia> getAll();
     
+    List<Familia> getAll(int page, int pageSize);
+    
     Familia getById(Long id);
 
     Familia insert(FamiliaDTO familiaDTO);
@@ -21,5 +23,5 @@ public interface FamiliaService {
 
     Long countByNome(String nome);
 
-    List<Familia> getByNome(String nome);
+    List<Familia> getByNome(String nome, int page, int pageSize);
 }

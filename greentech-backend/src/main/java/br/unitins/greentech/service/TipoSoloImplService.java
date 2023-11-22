@@ -27,6 +27,12 @@ public class TipoSoloImplService implements TipoSoloService {
     }
 
     @Override
+    public List<TipoSolo> getAll(int page, int pageSize) {
+        
+        return tipoSoloRepository.findAll(sort).page(page, pageSize).list();
+    }
+
+    @Override
     public TipoSolo getById(Long id) {
         
         TipoSolo tipoSolo = tipoSoloRepository.findById(id);
@@ -97,8 +103,8 @@ public class TipoSoloImplService implements TipoSoloService {
     }
 
     @Override
-    public List<TipoSolo> getByNome(String nome) {
+    public List<TipoSolo> getByNome(String nome, int page, int pageSize) {
         
-        return tipoSoloRepository.findByNome(nome, sort).list();
+        return tipoSoloRepository.findByNome(nome, sort).page(page, pageSize).list();
     }
 }

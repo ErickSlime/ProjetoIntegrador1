@@ -9,6 +9,8 @@ public interface PlantaService {
     
     List<Planta> getAll();
     
+    List<Planta> getAll(int page, int pageSize);
+    
     Planta getById(Long id);
 
     Planta insert(PlantaDTO plantaDTO);
@@ -21,5 +23,5 @@ public interface PlantaService {
 
     Long countByNome(String nome);
 
-    List<Planta> getByNome(String nome);
+    List<Planta> getByNome(String nome, int page, int pageSize);
 }

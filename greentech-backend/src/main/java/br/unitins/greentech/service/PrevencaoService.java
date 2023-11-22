@@ -9,6 +9,8 @@ public interface PrevencaoService {
     
     List<Prevencao> getAll();
     
+    List<Prevencao> getAll(int page, int pageSize);
+    
     Prevencao getById(Long id);
 
     Prevencao insert(PrevencaoDTO prevencaoDTO);
@@ -21,5 +23,5 @@ public interface PrevencaoService {
 
     Long countByNome(String nome);
 
-    List<Prevencao> getByNome(String nome);
+    List<Prevencao> getByNome(String nome, int page, int pageSize);
 }

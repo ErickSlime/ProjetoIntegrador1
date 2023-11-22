@@ -30,6 +30,12 @@ public class DicaImplService implements DicaService {
     }
 
     @Override
+    public List<Dica> getAll(int page, int pageSize) {
+        
+        return dicaRepository.findAll(sort).page(page, pageSize).list();
+    }
+
+    @Override
     public Dica getById(Long id) {
         
         Dica dica = dicaRepository.findById(id);
@@ -108,8 +114,8 @@ public class DicaImplService implements DicaService {
     }
 
     @Override
-    public List<Dica> getByNome(String nome) {
+    public List<Dica> getByNome(String nome, int page, int pageSize) {
         
-        return dicaRepository.findByNome(nome, sort).list();
+        return dicaRepository.findByNome(nome, sort).page(page, pageSize).list();
     }
 }

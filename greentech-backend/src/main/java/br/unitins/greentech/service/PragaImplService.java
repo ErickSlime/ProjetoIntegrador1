@@ -34,6 +34,12 @@ public class PragaImplService implements PragaService {
     }
 
     @Override
+    public List<Praga> getAll(int page, int pageSize) {
+        
+        return pragaRepository.findAll(sort).page(page, pageSize).list();
+    }
+
+    @Override
     public Praga getById(Long id) {
         
         Praga praga = pragaRepository.findById(id);
@@ -133,8 +139,8 @@ public class PragaImplService implements PragaService {
     }
 
     @Override
-    public List<Praga> getByNome(String nome) {
+    public List<Praga> getByNome(String nome, int page, int pageSize) {
         
-        return pragaRepository.findByNome(nome, sort).list();
+        return pragaRepository.findByNome(nome, sort).page(page, pageSize).list();
     }
 }

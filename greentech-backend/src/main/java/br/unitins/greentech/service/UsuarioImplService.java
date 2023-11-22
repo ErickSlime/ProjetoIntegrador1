@@ -31,6 +31,12 @@ public class UsuarioImplService implements UsuarioService {
     }
 
     @Override
+    public List<Usuario> getAll(int page, int pageSize) {
+        
+        return usuarioRepository.findAll(sort).page(page, pageSize).list();
+    }
+
+    @Override
     public Usuario getById(Long id) {
         
         Usuario usuario = usuarioRepository.findById(id);
@@ -142,8 +148,8 @@ public class UsuarioImplService implements UsuarioService {
     }
 
     @Override
-    public List<Usuario> getByNome(String nome) {
+    public List<Usuario> getByNome(String nome, int page, int pageSize) {
         
-        return usuarioRepository.findByNome(nome, sort).list();
+        return usuarioRepository.findByNome(nome, sort).page(page, pageSize).list();
     }
 }

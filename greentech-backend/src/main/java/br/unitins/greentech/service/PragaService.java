@@ -9,6 +9,8 @@ public interface PragaService {
     
     List<Praga> getAll();
     
+    List<Praga> getAll(int page, int pageSize);
+    
     Praga getById(Long id);
 
     Praga insert(PragaDTO pragaDTO);
@@ -21,5 +23,5 @@ public interface PragaService {
 
     Long countByNome(String nome);
 
-    List<Praga> getByNome(String nome);
+    List<Praga> getByNome(String nome, int page, int pageSize);
 }

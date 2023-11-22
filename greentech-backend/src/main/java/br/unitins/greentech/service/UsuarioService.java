@@ -9,6 +9,8 @@ public interface UsuarioService {
     
     List<Usuario> getAll();
     
+    List<Usuario> getAll(int page, int pageSize);
+    
     Usuario getById(Long id);
 
     Usuario insert(UsuarioDTO usuarioDTO);
@@ -21,5 +23,5 @@ public interface UsuarioService {
 
     Long countByNome(String nome);
 
-    List<Usuario> getByNome(String nome);
+    List<Usuario> getByNome(String nome, int page, int pageSize);
 }

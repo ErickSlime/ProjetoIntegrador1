@@ -8,6 +8,8 @@ import br.unitins.greentech.model.Dica;
 public interface DicaService {
     
     List<Dica> getAll();
+
+    List<Dica> getAll(int page, int pageSize);
     
     Dica getById(Long id);
 
@@ -21,5 +23,5 @@ public interface DicaService {
 
     Long countByNome(String nome);
 
-    List<Dica> getByNome(String nome);
+    List<Dica> getByNome(String nome, int page, int pageSize);
 }

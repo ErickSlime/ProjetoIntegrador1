@@ -26,6 +26,12 @@ public class FamiliaImplService implements FamiliaService {
     }
 
     @Override
+    public List<Familia> getAll(int page, int pageSize) {
+        
+        return familiaRepository.findAll(sort).page(page, pageSize).list();
+    }
+
+    @Override
     public Familia getById(Long id) {
         
         Familia familia = familiaRepository.findById(id);
@@ -96,8 +102,8 @@ public class FamiliaImplService implements FamiliaService {
     }
 
     @Override
-    public List<Familia> getByNome(String nome) {
+    public List<Familia> getByNome(String nome, int page, int pageSize) {
         
-        return familiaRepository.findByNome(nome, sort).list();
+        return familiaRepository.findByNome(nome, sort).page(page, pageSize).list();
     }
 }

@@ -9,6 +9,8 @@ public interface VideoService {
     
     List<Video> getAll();
     
+    List<Video> getAll(int page, int pageSize);
+    
     Video getById(Long id);
 
     Video insert(VideoDTO videoDTO);
@@ -21,5 +23,5 @@ public interface VideoService {
 
     Long countByNome(String nome);
 
-    List<Video> getByNome(String nome);
+    List<Video> getByNome(String nome, int page, int pageSize);
 }

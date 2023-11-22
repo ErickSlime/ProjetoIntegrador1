@@ -40,6 +40,12 @@ public class PlantaImplService implements PlantaService {
     }
 
     @Override
+    public List<Planta> getAll(int page, int pageSize) {
+        
+        return plantaRepository.findAll(sort).page(page, pageSize).list();
+    }
+
+    @Override
     public Planta getById(Long id) {
         
         Planta planta = plantaRepository.findById(id);
@@ -166,8 +172,8 @@ public class PlantaImplService implements PlantaService {
     }
 
     @Override
-    public List<Planta> getByNome(String nome) {
+    public List<Planta> getByNome(String nome, int page, int pageSize) {
         
-        return plantaRepository.findByNome(nome, sort).list();
+        return plantaRepository.findByNome(nome, sort).page(page, pageSize).list();
     }
 }

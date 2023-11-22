@@ -24,6 +24,12 @@ public class VideoImplService implements VideoService {
     }
 
     @Override
+    public List<Video> getAll(int page, int pageSize) {
+        
+        return videoRepository.findAll(sort).page(page, pageSize).list();
+    }
+
+    @Override
     public Video getById(Long id) {
         
         Video video = videoRepository.findById(id);
@@ -98,8 +104,8 @@ public class VideoImplService implements VideoService {
     }
 
     @Override
-    public List<Video> getByNome(String nome) {
+    public List<Video> getByNome(String nome, int page, int pageSize) {
         
-        return videoRepository.findByNome(nome, sort).list();
+        return videoRepository.findByNome(nome, sort).page(page, pageSize).list();
     }
 }

@@ -26,6 +26,12 @@ public class PrevencaoImplService implements PrevencaoService {
     }
 
     @Override
+    public List<Prevencao> getAll(int page, int pageSize) {
+        
+        return prevencaoRepository.findAll(sort).page(page, pageSize).list();
+    }
+
+    @Override
     public Prevencao getById(Long id) {
         
         Prevencao prevencao = prevencaoRepository.findById(id);
@@ -96,8 +102,8 @@ public class PrevencaoImplService implements PrevencaoService {
     }
 
     @Override
-    public List<Prevencao> getByNome(String nome) {
+    public List<Prevencao> getByNome(String nome, int page, int pageSize) {
         
-        return prevencaoRepository.findByNome(nome, sort).list();
+        return prevencaoRepository.findByNome(nome, sort).page(page, pageSize).list();
     }
 }
