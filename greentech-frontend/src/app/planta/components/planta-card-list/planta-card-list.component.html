@@ -4,14 +4,14 @@
 </div>
 
 <div class="barra-de-pesquisa">
-    <input type="text" class="input-de-pesquisa" placeholder="O que você está procurando?">
+    <input type="text" class="input-de-pesquisa" placeholder="O que você está procurando?" [(ngModel)]="filtro" matInput #input (keyup.enter) ="aplicarFiltro()">
   </div>
   
 
 <div class="container responsive-grid">
     <mat-card *ngFor="let card of cards()">
 
-        <img mat-card-image src={{card.urlImg}} >
+        <img class="imgCard" mat-card-image src={{card.urlImg}} >
        
         <mat-card-title class="centered-text"> {{card.titulo}} </mat-card-title>
 

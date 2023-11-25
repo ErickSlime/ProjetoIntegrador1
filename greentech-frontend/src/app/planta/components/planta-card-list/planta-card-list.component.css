@@ -59,4 +59,9 @@
   .example-spacer {
     flex: 1 1 auto;
 }
+
+.imgCard {
+  width: 100%;
+  height: 65%;
+}
   

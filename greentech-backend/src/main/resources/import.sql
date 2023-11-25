@@ -55,49 +55,49 @@ INSERT INTO planta (nome, nomeimagem, tempocolheita, descricao, id_tipo_solo, id
 VALUES ('Tomate' , 'https://teravirt.s3-accelerate.amazonaws.com/uploads/sites/95/2021/06/TOMATE-ESPECIAL.jpg', '2023-10-30', 'Fruta vermelha versátil, rica em vitamina A e licopeno, um antioxidante com propriedades anticancerígenas.', 1, 5);
 
 INSERT INTO Dica (nome, nomeImagem, descricao, id_planta)
-VALUES ('Dica 1', 'dica1.jpg', 'Dica de cuidado para sua planta.', 1);
+VALUES ('Dica 1', 'https://marketingpoliticohoje.com.br/wp-content/uploads/2019/03/dicas-para-quem-esta%CC%81-comec%CC%A7ando-no-marketing-poli%CC%81tico.jpg', 'Dica de cuidado para sua planta.', 1);
 
 INSERT INTO Dica (nome, nomeImagem, descricao, id_planta)
-VALUES ('Dica 2', 'dica2.jpg', 'Dica de adubação para sua planta.', 2);
+VALUES ('Dica 2', 'https://marketingpoliticohoje.com.br/wp-content/uploads/2019/03/dicas-para-quem-esta%CC%81-comec%CC%A7ando-no-marketing-poli%CC%81tico.jpg', 'Dica de adubação para sua planta.', 2);
 
 INSERT INTO Dica (nome, nomeImagem, descricao, id_planta)
-VALUES ('Dica 3', 'dica3.jpg', 'Dica de como combater pragas e doenças em sua planta.', 3);
+VALUES ('Dica 3', 'https://marketingpoliticohoje.com.br/wp-content/uploads/2019/03/dicas-para-quem-esta%CC%81-comec%CC%A7ando-no-marketing-poli%CC%81tico.jpg', 'Dica de como combater pragas e doenças em sua planta.', 3);
 
 INSERT INTO Dica (nome, nomeImagem, descricao, id_planta)
-VALUES ('Dica 4', 'dica4.jpg', 'Dica de como fazer a poda correta de sua planta.', 4);
+VALUES ('Dica 4', 'https://marketingpoliticohoje.com.br/wp-content/uploads/2019/03/dicas-para-quem-esta%CC%81-comec%CC%A7ando-no-marketing-poli%CC%81tico.jpg', 'Dica de como fazer a poda correta de sua planta.', 4);
 
 INSERT INTO Dica (nome, nomeImagem, descricao, id_planta)
-VALUES ('Dica 5', 'dica5.jpg', 'Dica de como transplantar sua planta.', 5);
+VALUES ('Dica 5', 'https://marketingpoliticohoje.com.br/wp-content/uploads/2019/03/dicas-para-quem-esta%CC%81-comec%CC%A7ando-no-marketing-poli%CC%81tico.jpg', 'Dica de como transplantar sua planta.', 5);
 
 
 INSERT INTO Praga (nome, nomeImagem, descricao, id_especie)
-VALUES ('Pulgão', 'pulgao.jpg', 'Pequeno inseto que se alimenta da seiva das plantas.', 1);
+VALUES ('Pulgão', 'https://blog.aegro.com.br/wp-content/uploads/2020/05/combate-ao-pulgao.jpg', 'Pequeno inseto que se alimenta da seiva das plantas.', 1);
 
 INSERT INTO Praga (nome, nomeImagem, descricao, id_especie)
-VALUES ('Lagarta', 'lagarta.jpg', 'Larva de borboletas e mariposas que se alimentam das folhas das plantas.', 2);
+VALUES ('Lagarta', 'https://terramagna.com.br/wp-content/uploads/2022/08/Lagarta-verde-folha.jpg', 'Larva de borboletas e mariposas que se alimentam das folhas das plantas.', 2);
 
 INSERT INTO Praga (nome, nomeImagem, descricao, id_especie)
-VALUES ('Ácaro', 'acaro.jpg', 'Pequeno aracnídeo que se aloja nas plantas e suga sua seiva.', 3);
+VALUES ('Ácaro', 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Rust_Mite%2C_Aceria_anthocoptes.jpg/1200px-Rust_Mite%2C_Aceria_anthocoptes.jpg', 'Pequeno aracnídeo que se aloja nas plantas e suga sua seiva.', 3);
 
 INSERT INTO Praga (nome, nomeImagem, descricao, id_especie)
-VALUES ('Cochonilha', 'cochonilha.jpg', 'Inseto que forma uma crosta algodoada nas plantas e se alimenta de sua seiva.', 4);
+VALUES ('Cochonilha', 'https://terramagna.com.br/wp-content/uploads/2022/05/praga-cochonilha-branca.png', 'Inseto que forma uma crosta algodoada nas plantas e se alimenta de sua seiva.', 4);
 
 INSERT INTO Praga (nome, nomeImagem, descricao, id_especie)
-VALUES ('Lesma', 'lesma.jpg', 'Molusco que se alimenta de folhas e frutos das plantas.', 5);
+VALUES ('Lesma', 'https://meusbichos.com.br/wp-content/uploads/2022/02/COMBATE-84-1024x576.jpg', 'Molusco que se alimenta de folhas e frutos das plantas.', 5);
 
 
 INSERT INTO Video (nome, urlVideo, descricao)
-VALUES ('Como Reregar Suas Plantas', 'https://www.youtube.com/watch?v=1234567890', 'Neste vídeo, aprenda como regar corretamente suas plantas e manter suas folhas verdes e saudáveis.');
+VALUES ('Como Reregar Suas Plantas', 'https://www.youtube.com/embed/4aj5IDEJh_I', 'Neste vídeo, aprenda como regar corretamente suas plantas e manter suas folhas verdes e saudáveis.');
 
 INSERT INTO Video (nome, urlVideo, descricao)
-VALUES ('Como Adubar Suas Plantas', 'https://www.youtube.com/watch?v=9876543210', 'Neste vídeo, descubra como escolher os adubos certos para suas plantas e como aplicá-los para um crescimento saudável.');
+VALUES ('Como Adubar Suas Plantas', 'https://www.youtube.com/embed/4aj5IDEJh_I', 'Neste vídeo, descubra como escolher os adubos certos para suas plantas e como aplicá-los para um crescimento saudável.');
 
 INSERT INTO Video (nome, urlVideo, descricao)
-VALUES ('Como Combater Pragas e Doenças em Suas Plantas', 'https://www.youtube.com/watch?v=0987654321', 'Neste vídeo, aprenda a identificar e combater pragas e doenças comuns que podem afetar suas plantas.');
+VALUES ('Como Combater Pragas e Doenças em Suas Plantas', 'https://www.youtube.com/embed/4aj5IDEJh_I', 'Neste vídeo, aprenda a identificar e combater pragas e doenças comuns que podem afetar suas plantas.');
 
 INSERT INTO Video (nome, urlVideo, descricao)
-VALUES ('Como Poda Corretamente Suas Plantas', 'https://www.youtube.com/watch?v=1239876543', 'Neste vídeo, aprenda técnicas de poda adequadas para diferentes tipos de plantas, estimulando seu crescimento e mantendo-as bonitas.');
+VALUES ('Como Poda Corretamente Suas Plantas', 'https://www.youtube.com/embed/4aj5IDEJh_I', 'Neste vídeo, aprenda técnicas de poda adequadas para diferentes tipos de plantas, estimulando seu crescimento e mantendo-as bonitas.');
 
 INSERT INTO Video (nome, urlVideo, descricao)
-VALUES ('Como Transplantar Suas Plantas', 'https://www.youtube.com/watch?v=9876543098', 'Neste vídeo, aprenda como transplantar suas plantas com segurança e sucesso, garantindo um ambiente propício para seu crescimento.');
+VALUES ('Como Transplantar Suas Plantas', 'https://www.youtube.com/embed/4aj5IDEJh_I', 'Neste vídeo, aprenda como transplantar suas plantas com segurança e sucesso, garantindo um ambiente propício para seu crescimento.');
 

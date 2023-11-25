@@ -55,7 +55,7 @@
 <div class="container responsive-grid">
     <mat-card *ngFor="let card of cards()">
 
-        <img mat-card-image src="https://super.abril.com.br/wp-content/uploads/2019/12/supawat-kampanna_eyeem_gettyimages_plantas-sons-estressadas_fb.png" >
+        <img class="imgCard" mat-card-image src={{card.urlImagem}} >
        
         <mat-card-title class="centered-text"> {{card.titulo}} </mat-card-title>
 
@@ -64,7 +64,7 @@
         </mat-card-actions>
 
         <mat-card-footer>
-            <button routerLink="/plantas/view" mat-flat-button color="primary" style="width: 100%; padding: 16px;">Ver mais</button>
+            <button routerLink="/plantas/view/{{card.id}}" mat-flat-button color="primary" style="width: 100%; padding: 16px;">Ver mais</button>
         </mat-card-footer>
     </mat-card>
 </div>
@@ -78,7 +78,7 @@
 <div class="container responsive-grid">
     <mat-card *ngFor="let card3 of cards3()">
 
-        <img mat-card-image src="https://marketingpoliticohoje.com.br/wp-content/uploads/2019/03/dicas-para-quem-esta%CC%81-comec%CC%A7ando-no-marketing-poli%CC%81tico.jpg" >
+        <img class="imgCard" mat-card-image src={{card3.urlImagem}} >
        
         <mat-card-title class="centered-text"> {{card3.titulo}} </mat-card-title>
 
@@ -87,7 +87,7 @@
         </mat-card-actions>
 
         <mat-card-footer>
-            <button  routerLink="/dicas/view" mat-flat-button color="primary" style="width: 100%; padding: 16px;">Ver mais</button>
+            <button  routerLink="/dicas/view/{{card3.id}}" mat-flat-button color="primary" style="width: 100%; padding: 16px;">Ver mais</button>
         </mat-card-footer>
     </mat-card>
 </div>
@@ -101,7 +101,7 @@
 <div class="container responsive-grid">
     <mat-card *ngFor="let card2 of cards2()">
 
-        <img mat-card-image src="https://byeinsect.com.br/wp-content/uploads/2023/02/ENQUANTO-VOCE-PENSA-EM-CURTIR-O-CLIMA-QUENTE-ELAS-SURGEM-PARA-TE-DAR-DOR-DE-CABECA.-PARA-AS-PRAGAS-NO-VERAO-O-CALOR-E-BENEFICIO.jpg" >
+        <img class="imgCard" mat-card-image src={{card2.urlImagem}} >
        
         <mat-card-title class="centered-text"> {{card2.titulo}} </mat-card-title>
 
@@ -110,7 +110,7 @@
         </mat-card-actions>
 
         <mat-card-footer>
-            <button routerLink="/pragas/view" mat-flat-button color="primary" style="width: 100%; padding: 16px;">Ver mais</button>
+            <button routerLink="/pragas/view/{{card2.id}}" mat-flat-button color="primary" style="width: 100%; padding: 16px;">Ver mais</button>
         </mat-card-footer>
     </mat-card>
 </div>
@@ -124,7 +124,7 @@
 <div class="container responsive-grid">
     <mat-card *ngFor="let card4 of cards4()">
 
-        <img mat-card-image src="https://img.freepik.com/vetores-premium/icone-de-video-tutorial-emblema-etiqueta-botao-claquete-com-reprodutor-de-video-online-em-execucao-projeto-de-filme-ou-cinema-online-de-reprodutor-de-video-em-claquete-editor-de-video-ou-producao-de-filmes-cinema-online_435184-625.jpg" >
+        <img class="imgCard" mat-card-image src="https://img.freepik.com/vetores-premium/icone-de-video-tutorial-emblema-etiqueta-botao-claquete-com-reprodutor-de-video-online-em-execucao-projeto-de-filme-ou-cinema-online-de-reprodutor-de-video-em-claquete-editor-de-video-ou-producao-de-filmes-cinema-online_435184-625.jpg" >
        
         <mat-card-title class="centered-text"> {{card4.titulo}} </mat-card-title>
 
@@ -133,7 +133,7 @@
         </mat-card-actions>
 
         <mat-card-footer>
-            <button  routerLink="/videos/view" mat-flat-button color="primary" style="width: 100%; padding: 16px;">Ver mais</button>
+            <button  routerLink="/videos/view/{{card4.id}}" mat-flat-button color="primary" style="width: 100%; padding: 16px;">Ver mais</button>
         </mat-card-footer>
     </mat-card>
 </div>

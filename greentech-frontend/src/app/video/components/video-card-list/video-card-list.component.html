@@ -4,14 +4,14 @@
 </div>
 
 <div class="barra-de-pesquisa">
-    <input type="text" class="input-de-pesquisa" placeholder="O que você está procurando?">
+    <input type="text" class="input-de-pesquisa" placeholder="O que você está procurando?" [(ngModel)]="filtro" matInput #input (keyup.enter) ="aplicarFiltro()">
   </div>
   
 
 <div class="container responsive-grid">
     <mat-card *ngFor="let card of cards()">
 
-        <img mat-card-image src="https://img.freepik.com/vetores-premium/icone-de-video-tutorial-emblema-etiqueta-botao-claquete-com-reprodutor-de-video-online-em-execucao-projeto-de-filme-ou-cinema-online-de-reprodutor-de-video-em-claquete-editor-de-video-ou-producao-de-filmes-cinema-online_435184-625.jpg" >
+        <img class="imgCard" mat-card-image src="https://img.freepik.com/vetores-premium/icone-de-video-tutorial-emblema-etiqueta-botao-claquete-com-reprodutor-de-video-online-em-execucao-projeto-de-filme-ou-cinema-online-de-reprodutor-de-video-em-claquete-editor-de-video-ou-producao-de-filmes-cinema-online_435184-625.jpg" >
        
         <mat-card-title class="centered-text"> {{card.titulo}} </mat-card-title>
 
@@ -20,7 +20,7 @@
         </mat-card-actions>
 
         <mat-card-footer>
-            <a routerLink="/videos/view/"><button mat-flat-button color="primary" style="width: 100%; padding: 16px;">Ver mais ...</button></a>
+            <a routerLink="/videos/view/{{card.id}}"><button mat-flat-button color="primary" style="width: 100%; padding: 16px;">Ver mais ...</button></a>
         </mat-card-footer>
     </mat-card>
 </div>

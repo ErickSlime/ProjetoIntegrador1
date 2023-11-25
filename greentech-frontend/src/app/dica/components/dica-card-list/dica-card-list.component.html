@@ -4,14 +4,14 @@
 </div>
 
 <div class="barra-de-pesquisa">
-    <input type="text" class="input-de-pesquisa" placeholder="O que você está procurando?">
+    <input type="text" class="input-de-pesquisa" placeholder="O que você está procurando?" [(ngModel)]="filtro" matInput #input (keyup.enter) ="aplicarFiltro()">
   </div>
   
 
 <div class="container responsive-grid">
     <mat-card *ngFor="let card of cards()">
 
-        <img mat-card-image src="https://marketingpoliticohoje.com.br/wp-content/uploads/2019/03/dicas-para-quem-esta%CC%81-comec%CC%A7ando-no-marketing-poli%CC%81tico.jpg" >
+        <img class="imgCard" mat-card-image src="https://marketingpoliticohoje.com.br/wp-content/uploads/2019/03/dicas-para-quem-esta%CC%81-comec%CC%A7ando-no-marketing-poli%CC%81tico.jpg" >
        
         <mat-card-title class="centered-text"> {{card.titulo}} </mat-card-title>
 
@@ -20,7 +20,7 @@
         </mat-card-actions>
 
         <mat-card-footer>
-            <a routerLink="/dicas/view/"><button mat-flat-button color="primary" style="width: 100%; padding: 16px;">Ver mais ...</button></a>
+            <a routerLink="/dicas/view/{{card.id}}"><button mat-flat-button color="primary" style="width: 100%; padding: 16px;">Ver mais ...</button></a>
         </mat-card-footer>
     </mat-card>
 </div>

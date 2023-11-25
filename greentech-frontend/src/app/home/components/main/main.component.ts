@@ -9,7 +9,9 @@ import { PragaService } from 'src/app/services/praga.service';
 import { VideoService } from 'src/app/services/video.service';
 
 type Card = {
+  id: number;
   titulo: string;
+  urlImagem: string;
 }
 
 @Component({
@@ -93,7 +95,9 @@ export class MainComponent implements OnInit{
     const cards: Card[] = [];
     this.plantas.slice(0,5).forEach(planta => {
       cards.push({
-        titulo: planta.nome
+        id: planta.id,
+        titulo: planta.nome,
+        urlImagem: planta.nomeImagem
       });
     });
     this.cards.set(cards);
@@ -101,7 +105,9 @@ export class MainComponent implements OnInit{
     const cards2: Card[] = [];
     this.pragas.forEach(praga => {
       cards2.push({
-        titulo: praga.nome
+        id: praga.id,
+        titulo: praga.nome,
+        urlImagem: praga.nomeImagem
       });
     });
     this.cards2.set(cards2);
@@ -109,7 +115,9 @@ export class MainComponent implements OnInit{
     const cards3: Card[] = [];
     this.dicas.forEach(dica => {
       cards3.push({
-        titulo: dica.nome
+        id: dica.id,
+        titulo: dica.nome,
+        urlImagem: dica.nomeImagem
       });
     });
     this.cards3.set(cards3);
@@ -117,7 +125,9 @@ export class MainComponent implements OnInit{
     const cards4: Card[] = [];
     this.videos.forEach(video => {
       cards4.push({
-        titulo: video.nome
+        id: video.id,
+        titulo: video.nome,
+        urlImagem: video.urlVideo
       });
     });
     this.cards4.set(cards4);
