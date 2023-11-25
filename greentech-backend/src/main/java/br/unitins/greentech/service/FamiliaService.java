@@ -3,11 +3,12 @@ package br.unitins.greentech.service;
 import java.util.List;
 
 import br.unitins.greentech.dto.FamiliaDTO;
+import br.unitins.greentech.dto.FamiliaResponseDTO;
 import br.unitins.greentech.model.Familia;
 
 public interface FamiliaService {
     
-    List<Familia> getAll();
+    List<FamiliaResponseDTO> getAll();
     
     List<Familia> getAll(int page, int pageSize);
     

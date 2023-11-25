@@ -4,7 +4,7 @@ public enum Classificacao {
 
     ARENOSO(1, "Arenoso"),
     ARGILOSO(2, "Argiloso"),
-    SILTOSO(2, "Siltoso");
+    SILTOSO(3, "Siltoso");
 
     private int id;
     private String label;

@@ -18,7 +18,7 @@ public class Usuario extends PessoaFisica {
     private Cargo cargo;
 
     @OneToMany
-    @JoinColumn(name = "id_plantas", nullable = false)
+    @JoinColumn(name = "id_plantas", nullable = true)
     private List<Planta> plantas;
     
     public String getLogin() {

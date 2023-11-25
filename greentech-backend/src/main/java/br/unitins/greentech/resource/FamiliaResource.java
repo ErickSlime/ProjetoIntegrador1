@@ -5,6 +5,7 @@ import java.util.List;
 import org.jboss.logging.Logger;
 
 import br.unitins.greentech.dto.FamiliaDTO;
+import br.unitins.greentech.dto.FamiliaResponseDTO;
 import br.unitins.greentech.model.Familia;
 import br.unitins.greentech.service.FamiliaService;
 import jakarta.inject.Inject;
@@ -34,7 +35,7 @@ public class FamiliaResource {
     private static final Logger LOG = Logger.getLogger(FamiliaResource.class);
 
     @GET
-    public List<Familia> getAll() {
+    public List<FamiliaResponseDTO> getAll() {
         LOG.info("Buscando todos as familias.");
         LOG.debug("ERRO DE DEBUG.");
         return familiaService.getAll();

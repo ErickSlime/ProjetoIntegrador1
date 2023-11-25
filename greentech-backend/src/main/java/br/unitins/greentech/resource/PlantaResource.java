@@ -5,6 +5,7 @@ import java.util.List;
 import org.jboss.logging.Logger;
 
 import br.unitins.greentech.dto.PlantaDTO;
+import br.unitins.greentech.dto.PlantaResponseDTO;
 import br.unitins.greentech.model.Planta;
 import br.unitins.greentech.service.PlantaService;
 import jakarta.inject.Inject;
@@ -34,7 +35,7 @@ public class PlantaResource {
     private static final Logger LOG = Logger.getLogger(PlantaResource.class);
 
     @GET
-    public List<Planta> getAll() {
+    public List<PlantaResponseDTO> getAll() {
         LOG.info("Buscando todos as plantas.");
         LOG.debug("ERRO DE DEBUG.");
         return plantaService.getAll();

@@ -3,11 +3,12 @@ package br.unitins.greentech.service;
 import java.util.List;
 
 import br.unitins.greentech.dto.PlantaDTO;
+import br.unitins.greentech.dto.PlantaResponseDTO;
 import br.unitins.greentech.model.Planta;
 
 public interface PlantaService {
     
-    List<Planta> getAll();
+    List<PlantaResponseDTO> getAll();
     
     List<Planta> getAll(int page, int pageSize);
     

@@ -29,7 +29,7 @@ public class Planta extends DefaultEntity {
     private Especie especie;
 
     @OneToMany
-    @JoinColumn(name = "id_videos", nullable = false)
+    @JoinColumn(name = "id_videos", nullable = true)
     private List<Video> videos;
 
     @ManyToMany

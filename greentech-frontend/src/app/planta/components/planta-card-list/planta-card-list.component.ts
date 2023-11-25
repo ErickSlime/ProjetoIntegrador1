@@ -1,6 +1,7 @@
 import { Component, OnInit, Signal, signal } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Planta } from 'src/app/models/planta.model';
+import { PlantaService } from 'src/app/services/planta.service';
 
 type Card = {
   titulo: string;
@@ -15,36 +16,52 @@ export class PlantaCardListComponent implements OnInit {
 
   cards = signal<Card[]> ([]);
   plantas: Planta[] = [];
-
-  totalRegistros = 17;
+  totalRegistros = 0;
+  filtro: string = "";
   pageSize = 10;
   pagina = 0;
-
-  constructor() {}
+  constructor(private plantaService: PlantaService) {}
 
   ngOnInit(): void {
-    this.plantas.push(
-      { id:0, nome: 'Planta 1', descricao: 'sadasd'},
-      { id:1, nome: 'Planta 2', descricao: 'sadasd'},
-      { id:2, nome: 'Planta 3', descricao: 'sadasd'},
-      { id:3, nome: 'Planta 4', descricao: 'sadasd'},
-      { id:4, nome: 'Planta 5', descricao: 'sadasd'},
-      { id:5, nome: 'Planta 6', descricao: 'sadasd'},
-      { id:6, nome: 'Planta 7', descricao: 'sadasd'},
-      { id:7, nome: 'Planta 8', descricao: 'sadasd'},
-      { id:8, nome: 'Planta 9', descricao: 'sadasd'},
-      { id:9, nome: 'Planta 10', descricao: 'sadasd'},
-      { id:10, nome: 'Planta 11', descricao: 'sadasd'},
-      { id:11, nome: 'Planta 12', descricao: 'sadasd'},
-      { id:12, nome: 'Planta 13', descricao: 'sadasd'},
-      { id:13, nome: 'Planta 14', descricao: 'sadasd'},
-      { id:14, nome: 'Planta 15', descricao: 'sadasd'},
-      { id:15, nome: 'Planta 16', descricao: 'sadasd'},
-      { id:16, nome: 'Planta 17', descricao: 'sadasd'}
-    );
-
-    this.carregarCards();
+    this.carregarPlantas();
+    this.carregarTotalRegistros();
   }
+
+  carregarPlantas() {
+    if(this.filtro){
+      this.plantaService.findByNome(this.filtro,this.pagina, this.pageSize).subscribe(data => {
+        this.plantas = data;
+        this.carregarCards();
+      })
+
+    }else{
+
+    this.plantaService.findAll().subscribe(data => {
+      this.plantas = data;
+      this.carregarCards();
+    })
+  };
+  
+  }
+
+  carregarTotalRegistros() {
+    if(this.filtro){
+      this.plantaService.countByNome(this.filtro).subscribe(data => {
+        this.totalRegistros = data;})
+    }else{
+
+    this.plantaService.count().subscribe(data => {
+      this.totalRegistros = data;
+    });
+  }
+  }
+
+    // Método para paginar os resultados
+    paginar(event: PageEvent): void {
+      this.pagina = event.pageIndex;
+      this.pageSize = event.pageSize;
+      this.carregarPlantas();
+    }
 
   carregarCards() {
     const cards: Card[] = [];
@@ -54,6 +71,11 @@ export class PlantaCardListComponent implements OnInit {
       });
     });
     this.cards.set(cards);
+  }
+
+  aplicarFiltro() {
+    this.carregarPlantas();
+  
   }
 
 }

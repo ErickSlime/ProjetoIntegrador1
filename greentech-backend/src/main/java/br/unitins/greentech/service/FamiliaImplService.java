@@ -1,8 +1,10 @@
 package br.unitins.greentech.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import br.unitins.greentech.dto.FamiliaDTO;
+import br.unitins.greentech.dto.FamiliaResponseDTO;
 import br.unitins.greentech.model.Familia;
 import br.unitins.greentech.repository.FamiliaRepository;
 import io.quarkus.panache.common.Sort;
@@ -20,9 +22,11 @@ public class FamiliaImplService implements FamiliaService {
     private Sort sort = Sort.by("id").ascending();
 
     @Override
-    public List<Familia> getAll() {
+    public List<FamiliaResponseDTO> getAll() {
         
-        return familiaRepository.findAll(sort).list();
+        List<Familia> list = familiaRepository.findAll().list();
+
+        return list.stream().map(e -> FamiliaResponseDTO.valueOf(e)).collect(Collectors.toList());
     }
 
     @Override

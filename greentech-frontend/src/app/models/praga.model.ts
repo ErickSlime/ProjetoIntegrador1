@@ -1,5 +1,11 @@
+import { Especie } from "./especie.model";
+import { Prevencao } from "./prevencao.model";
+
 export class Praga {
     id!: number;
     nome!: string;
-    descricao!: string;
+    nomeImagem!: string;
+    descricao!: number;
+    prevencao!: Prevencao[];
+    especie!: Especie;
 }

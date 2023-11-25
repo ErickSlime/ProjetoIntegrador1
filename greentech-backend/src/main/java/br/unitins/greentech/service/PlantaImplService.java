@@ -1,8 +1,10 @@
 package br.unitins.greentech.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import br.unitins.greentech.dto.PlantaDTO;
+import br.unitins.greentech.dto.PlantaResponseDTO;
 import br.unitins.greentech.model.Planta;
 import br.unitins.greentech.repository.EspecieRepository;
 import br.unitins.greentech.repository.PlantaRepository;
@@ -10,10 +12,12 @@ import br.unitins.greentech.repository.PragaRepository;
 import br.unitins.greentech.repository.TipoSoloRepository;
 import br.unitins.greentech.repository.VideoRepository;
 import io.quarkus.panache.common.Sort;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.NotFoundException;
 
+@ApplicationScoped
 public class PlantaImplService implements PlantaService {
     
     @Inject
@@ -34,9 +38,11 @@ public class PlantaImplService implements PlantaService {
     private Sort sort = Sort.by("id").ascending();
 
     @Override
-    public List<Planta> getAll() {
+    public List<PlantaResponseDTO> getAll() {
         
-        return plantaRepository.findAll(sort).list();
+        List<Planta> list = plantaRepository.findAll().list();
+
+        return list.stream().map(e -> PlantaResponseDTO.valueOf(e)).collect(Collectors.toList());
     }
 
     @Override

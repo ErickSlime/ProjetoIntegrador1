@@ -6,10 +6,12 @@ import br.unitins.greentech.dto.VideoDTO;
 import br.unitins.greentech.model.Video;
 import br.unitins.greentech.repository.VideoRepository;
 import io.quarkus.panache.common.Sort;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.NotFoundException;
 
+@ApplicationScoped
 public class VideoImplService implements VideoService {
     
     @Inject
