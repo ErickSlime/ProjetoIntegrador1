@@ -3,6 +3,7 @@ package br.unitins.greentech.service;
 import java.util.List;
 
 import br.unitins.greentech.dto.DicaDTO;
+import br.unitins.greentech.dto.DicaResponseDTO;
 import br.unitins.greentech.model.Dica;
 
 public interface DicaService {
@@ -13,7 +14,7 @@ public interface DicaService {
     
     Dica getById(Long id);
 
-    Dica insert(DicaDTO dicaDTO);
+    DicaResponseDTO insert(DicaDTO dicaDTO);
 
     Dica update(Long id, DicaDTO dicaDTO);
 

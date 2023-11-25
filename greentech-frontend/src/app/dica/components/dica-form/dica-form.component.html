@@ -5,6 +5,7 @@
 
 <div class="form-container">
     <h1>Informações sobre a Dica</h1>
+    <form [formGroup]="formGroup" >
     <div class="row">
         <mat-form-field appearance="outline" class="half-width-input">
             <mat-label>Nome</mat-label>
@@ -13,7 +14,8 @@
                 Nome é Obrigatório
             </mat-error>
         </mat-form-field>
-
+      </div>
+      <div class="row">
         <mat-form-field appearance="outline" class="half-width-input">
             <mat-label>Descricao</mat-label>
             <input matInput type="text" formControlName="descricao" />
@@ -21,12 +23,34 @@
                 Descricao é Obrigatório
             </mat-error>
         </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="outline" class="half-width-input">
+          <mat-label>NomeImagem</mat-label>
+          <input matInput type="text" formControlName="nomeImagem" />
+          <mat-error *ngIf="formGroup.get('nomeImagem') && formGroup.get('nomeImagem')?.invalid && formGroup.get('nomeImagem')?.touched">
+              NomeImagem é Obrigatório
+          </mat-error>
+      </mat-form-field>
     </div>
+      <div class="row">
+      <mat-form-field appearance="outline" >
+        <mat-label for="planta_id">Plantas</mat-label>
+        <mat-select formControlName="planta" id="planta_id">
+          <mat-option *ngFor="let planta of plantas" [value]="planta">
+            {{planta.nome}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      </div>
+    </form>
+    
 
     <div class="button-container">
         <mat-card-actions>
             <div class="button-wrapper">
-              <button mat-raised-button color="primary">
+              <button mat-raised-button color="primary"
+              (click)="salvar()">
                 Cadastrar
               </button>
             </div>

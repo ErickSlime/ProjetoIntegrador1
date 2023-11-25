@@ -29,7 +29,13 @@ export class DicaService {
   }
 
   save(dica: Dica): Observable<Dica> {
-    return this.http.post<Dica>(`${this.baseURL}/dicas`, dica);
+    const obj = {
+      nome: dica.nome,
+      descricao: dica.descricao,
+      nomeImagem: dica.nomeImagem,
+      planta: dica.planta.id
+    }
+    return this.http.post<Dica>(`${this.baseURL}/dicas`, obj);
   }
 
   update(dica: Dica): Observable<Dica> {

@@ -3,6 +3,7 @@ package br.unitins.greentech.service;
 import java.util.List;
 
 import br.unitins.greentech.dto.DicaDTO;
+import br.unitins.greentech.dto.DicaResponseDTO;
 import br.unitins.greentech.model.Dica;
 import br.unitins.greentech.repository.DicaRepository;
 import br.unitins.greentech.repository.PlantaRepository;
@@ -48,7 +49,7 @@ public class DicaImplService implements DicaService {
 
     @Override
     @Transactional
-    public Dica insert(DicaDTO dicaDTO) {
+    public DicaResponseDTO insert(DicaDTO dicaDTO) {
         
         Dica dica = new Dica();
 
@@ -62,7 +63,7 @@ public class DicaImplService implements DicaService {
 
         dicaRepository.persist(dica);
 
-        return dica;
+        return DicaResponseDTO.valueOf(dica);
     }
 
     @Override

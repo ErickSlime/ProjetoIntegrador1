@@ -12,7 +12,7 @@ public class Dica extends DefaultEntity {
     private String descricao;
 
     @ManyToOne
-    @JoinColumn(name = "id_planta", nullable = false)
+    @JoinColumn(name = "id_planta", nullable = true)
     private Planta planta;
     
     public String getNome() {

@@ -5,6 +5,7 @@ import java.util.List;
 import org.jboss.logging.Logger;
 
 import br.unitins.greentech.dto.DicaDTO;
+import br.unitins.greentech.dto.DicaResponseDTO;
 import br.unitins.greentech.model.Dica;
 import br.unitins.greentech.service.DicaService;
 import jakarta.inject.Inject;
@@ -71,9 +72,9 @@ public class DicaResource {
         
         LOG.infof("Inserindo uma dica: %s", dicaDTO.nome());
 
-        Dica dica = dicaService.insert(dicaDTO);
+        DicaResponseDTO dica = dicaService.insert(dicaDTO);
 
-        LOG.infof("dica (%d) criado com sucesso.", dica.getId());
+        LOG.infof("dica (%d) criado com sucesso.", dica.id());
 
         return Response.status(Status.CREATED).entity(dica).build();
     }
