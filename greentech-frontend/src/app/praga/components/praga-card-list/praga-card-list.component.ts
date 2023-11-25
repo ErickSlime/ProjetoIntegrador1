@@ -1,9 +1,13 @@
 import { Component, OnInit, Signal, signal } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Praga } from 'src/app/models/praga.model';
+import { PragaService } from 'src/app/services/praga.service';
 
 type Card = {
+  id: number;
   titulo: string;
+  descricao: string;
+  urlImg: string;
 }
 
 @Component({
@@ -12,47 +16,70 @@ type Card = {
   styleUrls: ['./praga-card-list.component.css']
 })
 export class PragaCardListComponent implements OnInit {
-
   cards = signal<Card[]> ([]);
   pragas: Praga[] = [];
-
-  totalRegistros = 17;
+  totalRegistros = 0;
+  filtro: string = "";
   pageSize = 10;
   pagina = 0;
-
-  constructor() {}
+  constructor(private pragaService: PragaService) {}
 
   ngOnInit(): void {
-    this.pragas.push(
-      { id:0, nome: 'Praga 1', descricao: 'sadasd'},
-      { id:1, nome: 'Praga 2', descricao: 'sadasd'},
-      { id:2, nome: 'Praga 3', descricao: 'sadasd'},
-      { id:3, nome: 'Praga 4', descricao: 'sadasd'},
-      { id:4, nome: 'Praga 5', descricao: 'sadasd'},
-      { id:5, nome: 'Praga 6', descricao: 'sadasd'},
-      { id:6, nome: 'Praga 7', descricao: 'sadasd'},
-      { id:7, nome: 'Praga 8', descricao: 'sadasd'},
-      { id:8, nome: 'Praga 9', descricao: 'sadasd'},
-      { id:9, nome: 'Praga 10', descricao: 'sadasd'},
-      { id:10, nome: 'Praga 11', descricao: 'sadasd'},
-      { id:11, nome: 'Praga 12', descricao: 'sadasd'},
-      { id:12, nome: 'Praga 13', descricao: 'sadasd'},
-      { id:13, nome: 'Praga 14', descricao: 'sadasd'},
-      { id:14, nome: 'Praga 15', descricao: 'sadasd'},
-      { id:15, nome: 'Praga 16', descricao: 'sadasd'},
-    );
-
-    this.carregarCards();
+    this.carregarPragas();
+    this.carregarTotalRegistros();
   }
+
+  carregarPragas() {
+    if(this.filtro){
+      this.pragaService.findByNome(this.filtro,this.pagina, this.pageSize).subscribe(data => {
+        this.pragas = data;
+        this.carregarCards();
+      })
+
+    }else{
+
+    this.pragaService.findAll().subscribe(data => {
+      this.pragas = data;
+      this.carregarCards();
+    })
+  };
+  
+  }
+
+  carregarTotalRegistros() {
+    if(this.filtro){
+      this.pragaService.countByNome(this.filtro).subscribe(data => {
+        this.totalRegistros = data;})
+    }else{
+
+    this.pragaService.count().subscribe(data => {
+      this.totalRegistros = data;
+    });
+  }
+  }
+
+    // Método para paginar os resultados
+    paginar(event: PageEvent): void {
+      this.pagina = event.pageIndex;
+      this.pageSize = event.pageSize;
+      this.carregarPragas();
+    }
 
   carregarCards() {
     const cards: Card[] = [];
     this.pragas.forEach(praga => {
       cards.push({
-        titulo: praga.nome
+        id: praga.id,
+        titulo: praga.nome,
+        descricao: praga.descricao,
+        urlImg: praga.nomeImagem
       });
     });
     this.cards.set(cards);
   }
 
+  aplicarFiltro() {
+    this.carregarPragas();
+  
+  }
 }

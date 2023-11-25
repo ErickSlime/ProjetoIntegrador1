@@ -5,7 +5,7 @@ export class Praga {
     id!: number;
     nome!: string;
     nomeImagem!: string;
-    descricao!: number;
+    descricao!: string;
     prevencao!: Prevencao[];
     especie!: Especie;
 }

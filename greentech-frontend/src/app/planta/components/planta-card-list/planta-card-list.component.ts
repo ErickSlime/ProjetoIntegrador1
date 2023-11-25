@@ -4,7 +4,10 @@ import { Planta } from 'src/app/models/planta.model';
 import { PlantaService } from 'src/app/services/planta.service';
 
 type Card = {
+  id: number;
   titulo: string;
+  especieP: string;
+  urlImg: string;
 }
 
 @Component({
@@ -67,7 +70,10 @@ export class PlantaCardListComponent implements OnInit {
     const cards: Card[] = [];
     this.plantas.forEach(planta => {
       cards.push({
-        titulo: planta.nome
+        id: planta.id,
+        titulo: planta.nome,
+        especieP: planta.especie.nome,
+        urlImg: planta.nomeImagem
       });
     });
     this.cards.set(cards);

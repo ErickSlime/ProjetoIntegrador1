@@ -23,13 +23,6 @@ export class VideoCardListComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.videos.push(
-      { id:0, nome: 'Video 1', descricao: 'sadasd'},
-      { id:1, nome: 'Video 2', descricao: 'sadasd'},
-      { id:2, nome: 'Video 3', descricao: 'sadasd'},
-      { id:3, nome: 'Video 4', descricao: 'sadasd'},
-    );
-
     this.carregarCards();
   }
 

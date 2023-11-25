@@ -3,6 +3,10 @@ import { Dica } from 'src/app/models/dica.model';
 import { Planta } from 'src/app/models/planta.model';
 import { Praga } from 'src/app/models/praga.model';
 import { Video } from 'src/app/models/video.model';
+import { DicaService } from 'src/app/services/dica.service';
+import { PlantaService } from 'src/app/services/planta.service';
+import { PragaService } from 'src/app/services/praga.service';
+import { VideoService } from 'src/app/services/video.service';
 
 type Card = {
   titulo: string;
@@ -44,12 +48,16 @@ export class MainComponent implements OnInit{
   cards2 = signal<Card[]> ([]);
   cards3 = signal<Card[]> ([]);
   cards4 = signal<Card[]> ([]);
+
   plantas: Planta[] = [];
   pragas: Praga[] = [];
   dicas: Dica[] = [];
   videos: Video[] = [];
 
-  constructor() {}
+  constructor(private plantaService: PlantaService,
+    private pragaService: PragaService,
+    private dicaService: DicaService,
+    private videoService: VideoService) {}
 
   ngOnInit(): void {
 
@@ -58,44 +66,32 @@ export class MainComponent implements OnInit{
       this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
     }, 5000);
 
-    this.plantas.push(
-      { id:0, nome: 'Planta 1', descricao: 'sadasd'},
-      { id:1, nome: 'Planta 2', descricao: 'sadasd'},
-      { id:2, nome: 'Planta 3', descricao: 'sadasd'},
-      { id:3, nome: 'Planta 4', descricao: 'sadasd'},
-      { id:4, nome: 'Planta 5', descricao: 'sadasd'}
-    );
+    this.plantaService.findAll().subscribe(data => {
+      this.plantas = data;
+      this.carregarCards();
+    });
 
-    this.pragas.push(
-      { id:0, nome: 'Praga 1', descricao: 'sadasd'},
-      { id:1, nome: 'Praga 2', descricao: 'sadasd'},
-      { id:2, nome: 'Praga 3', descricao: 'sadasd'},
-      { id:3, nome: 'Praga 4', descricao: 'sadasd'},
-      { id:4, nome: 'Praga 5', descricao: 'sadasd'}
-    );
+    this.pragaService.findAll().subscribe(data => {
+      this.pragas = data;
+      this.carregarCards();
+    });
 
-    this.dicas.push(
-      { id:0, nome: 'Dica 1', descricao: 'sadasd'},
-      { id:1, nome: 'Dica 2', descricao: 'sadasd'},
-      { id:2, nome: 'Dica 3', descricao: 'sadasd'},
-      { id:3, nome: 'Dica 4', descricao: 'sadasd'},
-      { id:4, nome: 'Dica 5', descricao: 'sadasd'}
-    );
+    this.dicaService.findAll().subscribe(data => {
+      this.dicas = data;
+      this.carregarCards();
+    });
 
-    this.videos.push(
-      { id:0, nome: 'Video 1', descricao: 'sadasd'},
-      { id:1, nome: 'Video 2', descricao: 'sadasd'},
-      { id:2, nome: 'Video 3', descricao: 'sadasd'},
-      { id:3, nome: 'Video 4', descricao: 'sadasd'},
-      { id:4, nome: 'Video 5', descricao: 'sadasd'}
-    );
-
+    this.videoService.findAll().subscribe(data => {
+      this.videos = data;
+      this.carregarCards();
+    });
+    
     this.carregarCards();
   }
 
   carregarCards() {
     const cards: Card[] = [];
-    this.plantas.forEach(planta => {
+    this.plantas.slice(0,5).forEach(planta => {
       cards.push({
         titulo: planta.nome
       });

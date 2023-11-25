@@ -16,7 +16,7 @@ public class Praga extends DefaultEntity {
     private String descricao;
 
     @OneToMany
-    @JoinColumn(name = "id_prevencoes", nullable = false)
+    @JoinColumn(name = "id_prevencoes", nullable = true)
     private List<Prevencao> prevencoes;
 
     @OneToOne
