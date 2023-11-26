@@ -6,7 +6,6 @@ import br.unitins.greentech.dto.PragaDTO;
 import br.unitins.greentech.model.Praga;
 import br.unitins.greentech.repository.EspecieRepository;
 import br.unitins.greentech.repository.PragaRepository;
-import br.unitins.greentech.repository.PrevencaoRepository;
 import io.quarkus.panache.common.Sort;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;

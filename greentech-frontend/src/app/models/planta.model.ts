@@ -1,7 +1,5 @@
 import { Especie } from "./especie.model";
-import { Praga } from "./praga.model";
 import { TipoSolo } from "./tipo-solo.model";
-import { Video } from "./video.model";
 
 export class Planta {
     id!: number;
@@ -10,6 +8,4 @@ export class Planta {
     descricao!: string;
     tipoSolo!: TipoSolo;
     especie!: Especie;
-    videos!: Video[];
-    pragas!: Praga[];
 }
