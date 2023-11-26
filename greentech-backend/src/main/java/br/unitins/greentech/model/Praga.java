@@ -15,10 +15,6 @@ public class Praga extends DefaultEntity {
     private String nomeImagem;
     private String descricao;
 
-    @OneToMany
-    @JoinColumn(name = "id_prevencoes", nullable = true)
-    private List<Prevencao> prevencoes;
-
     @OneToOne
     @JoinColumn(name = "id_especie", nullable = false)
     private Especie especie;
@@ -40,21 +36,6 @@ public class Praga extends DefaultEntity {
     }
     public void setDescricao(String descricao) {
         this.descricao = descricao;
-    }
-    public List<Prevencao> getPrevencoes() {
-        return prevencoes;
-    }
-    public void setPrevencoes(List<Prevencao> prevencoes) {
-        this.prevencoes = prevencoes;
-    }
-    public void plusPrevencoes(Prevencao prevencao) {
-        
-        if (prevencoes == null) {
-
-            prevencoes = new ArrayList<>();
-        }
-        
-        this.prevencoes.add(prevencao);
     }
     public Especie getEspecie() {
         return especie;

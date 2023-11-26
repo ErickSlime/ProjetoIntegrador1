@@ -20,9 +20,6 @@ public class PragaImplService implements PragaService {
     PragaRepository pragaRepository;
     
     @Inject
-    PrevencaoRepository prevencaoRepository;
-    
-    @Inject
     EspecieRepository especieRepository;
     
     private Sort sort = Sort.by("id").ascending();
@@ -64,11 +61,6 @@ public class PragaImplService implements PragaService {
 
         praga.setEspecie(especieRepository.findById(pragaDTO.especie()));
 
-        for (Long prevencao : pragaDTO.prevencoes()) {
-            
-            praga.plusPrevencoes(prevencaoRepository.findById(prevencao));
-        }
-
         pragaRepository.persist(praga);
 
         return praga;
@@ -77,8 +69,6 @@ public class PragaImplService implements PragaService {
     @Override
     @Transactional
     public Praga update(Long id, PragaDTO pragaDTO) {
-
-        int tamanhoArray;
         
         Praga praga = pragaRepository.findById(id);
 
@@ -92,20 +82,6 @@ public class PragaImplService implements PragaService {
         praga.setDescricao(pragaDTO.descricao());
 
         praga.setEspecie(especieRepository.findById(pragaDTO.especie()));
-
-        tamanhoArray = praga.getPrevencoes().size();
-
-        while (tamanhoArray != 0) {
-            
-            praga.getPrevencoes().remove(0);
-
-            tamanhoArray--;
-        }
-
-        for (Long prevencao : pragaDTO.prevencoes()) {
-            
-            praga.plusPrevencoes(prevencaoRepository.findById(prevencao));
-        }
 
         return praga;
     }

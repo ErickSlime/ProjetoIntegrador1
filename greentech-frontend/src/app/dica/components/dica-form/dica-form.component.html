@@ -1,39 +1,41 @@
 <div class="titulo">
-    <h1><mat-icon class="my-big-icon">control_point</mat-icon> Cadastro de Dica</h1>
+  <h1><mat-icon class="my-big-icon">control_point</mat-icon> Cadastro de Dica</h1>
 </div>
 
 <div class="form-container">
-    <h1>Informações sobre a Dica</h1>
-    <form [formGroup]="formGroup" >
+  <h1>Informações sobre a Dica</h1>
+  <form [formGroup]="formGroup">
     <div class="row">
-        <mat-form-field appearance="outline" class="half-width-input">
-            <mat-label>Nome</mat-label>
-            <input matInput type="text" formControlName="nome" />
-            <mat-error *ngIf="formGroup.get('nome') && formGroup.get('nome')?.invalid && formGroup.get('nome')?.touched">
-                Nome é Obrigatório
-            </mat-error>
-        </mat-form-field>
-      </div>
-      <div class="row">
-        <mat-form-field appearance="outline" class="half-width-input">
-            <mat-label>Descricao</mat-label>
-            <input matInput type="text" formControlName="descricao" />
-            <mat-error *ngIf="formGroup.get('descricao') && formGroup.get('descricao')?.invalid && formGroup.get('descricao')?.touched">
-                Descricao é Obrigatório
-            </mat-error>
-        </mat-form-field>
-      </div>
-      <div class="row">
-        <mat-form-field appearance="outline" class="half-width-input">
-          <mat-label>NomeImagem</mat-label>
-          <input matInput type="text" formControlName="nomeImagem" />
-          <mat-error *ngIf="formGroup.get('nomeImagem') && formGroup.get('nomeImagem')?.invalid && formGroup.get('nomeImagem')?.touched">
-              NomeImagem é Obrigatório
-          </mat-error>
+      <mat-form-field appearance="outline" class="half-width-input">
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" formControlName="nome" />
+        <mat-error *ngIf="formGroup.get('nome') && formGroup.get('nome')?.invalid && formGroup.get('nome')?.touched">
+          Nome é Obrigatório
+        </mat-error>
       </mat-form-field>
     </div>
-      <div class="row">
-      <mat-form-field appearance="outline" >
+    <div class="row">
+      <mat-form-field appearance="outline" class="half-width-input">
+        <mat-label>Descricao</mat-label>
+        <input matInput type="text" formControlName="descricao" />
+        <mat-error
+          *ngIf="formGroup.get('descricao') && formGroup.get('descricao')?.invalid && formGroup.get('descricao')?.touched">
+          Descricao é Obrigatório
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline" class="half-width-input">
+        <mat-label>NomeImagem</mat-label>
+        <input matInput type="text" formControlName="nomeImagem" />
+        <mat-error
+          *ngIf="formGroup.get('nomeImagem') && formGroup.get('nomeImagem')?.invalid && formGroup.get('nomeImagem')?.touched">
+          NomeImagem é Obrigatório
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
         <mat-label for="planta_id">Plantas</mat-label>
         <mat-select formControlName="planta" id="planta_id">
           <mat-option *ngFor="let planta of plantas" [value]="planta">
@@ -41,24 +43,21 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-      </div>
-    </form>
-    
-
-    <div class="button-container">
-        <mat-card-actions>
-            <div class="button-wrapper">
-              <button mat-raised-button color="primary"
-              (click)="salvar()">
-                Cadastrar
-              </button>
-            </div>
-            <div class="button-wrapper">
-              <button mat-raised-button routerLink="/home/main">
-                Cancelar
-              </button>
-            </div>
-          </mat-card-actions>
     </div>
-</div>
+  </form>
 
+  <div class="button-container">
+    <mat-card-actions>
+      <div class="button-wrapper">
+        <button mat-raised-button color="primary" (click)="salvar()">
+          Cadastrar
+        </button>
+      </div>
+      <div class="button-wrapper">
+        <button mat-raised-button routerLink="/home/main">
+          Cancelar
+        </button>
+      </div>
+    </mat-card-actions>
+  </div>
+</div>
