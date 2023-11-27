@@ -45,16 +45,38 @@
         </mat-select>
       </mat-form-field>
     </div>
+    <div formGroupName="especie">
+    <div class="row">
+      <mat-form-field appearance="outline" class="half-width-input">
+        <mat-label id="nome_id">Nome da Especie</mat-label>
+        <input matInput type="text" formControlName="nome" id="nome_id" />
+        <mat-error
+          *ngIf="formGroup.get('especie')?.get('nome')">
+          Nome da Especie é Obrigatório
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline" class="half-width-input">
+        <mat-label id="caracteristica">Caracteristica da Especie</mat-label>
+        <input matInput type="text" formControlName="caracteristica" id="caracteristica"/>
+        <mat-error
+          *ngIf="formGroup.get('especie')?.get('caracteristica')">
+          Caracteristica da Especie é Obrigatório
+        </mat-error>
+      </mat-form-field>
+    </div>
     <div class="row">
       <mat-form-field appearance="outline">
-        <mat-label for="especie_id">Especies</mat-label>
-        <mat-select formControlName="especie" id="especie_id">
-          <mat-option *ngFor="let especie of especies" [value]="especie">
-            {{especie.nome}}
+        <mat-label for="familia_id">Familias</mat-label>
+        <mat-select formControlName="familia" id="familia_id">
+          <mat-option *ngFor="let familia of familias" [value]="familia">
+            {{familia.nome}}
           </mat-option>
         </mat-select>
       </mat-form-field>
     </div>
+  </div>
   </form>
 
   <div class="button-container">

@@ -28,6 +28,9 @@ public class PlantaImplService implements PlantaService {
     
     @Inject
     EspecieRepository especieRepository;
+
+    @Inject
+    EspecieService especieService;
     
     @Inject
     VideoRepository videoRepository;
@@ -72,23 +75,23 @@ public class PlantaImplService implements PlantaService {
 
         planta.setNomeImagem(plantaDTO.nomeImagem());
 
-        planta.setTempoColheita(plantaDTO.tempoColheita());
+        // planta.setTempoColheita(plantaDTO.tempoColheita());
 
         planta.setDescricao(plantaDTO.descricao());
 
         planta.setTipoSolo(tipoSoloRepository.findById(plantaDTO.tipoSolo()));
 
-        planta.setEspecie(especieRepository.findById(plantaDTO.especie()));
+        planta.setEspecie(especieService.insert(plantaDTO.especie()));
 
-        for (Long video : plantaDTO.videos()) {
+        // for (Long video : plantaDTO.videos()) {
             
-            planta.plusVideos(videoRepository.findById(video));
-        }
+        //     planta.plusVideos(videoRepository.findById(video));
+        // }
 
-        for (Long praga : plantaDTO.pragas()) {
+        // for (Long praga : plantaDTO.pragas()) {
             
-            planta.plusPragas(pragaRepository.findById(praga));
-        }
+        //     planta.plusPragas(pragaRepository.findById(praga));
+        // }
 
         plantaRepository.persist(planta);
 
@@ -110,41 +113,41 @@ public class PlantaImplService implements PlantaService {
 
         planta.setNomeImagem(plantaDTO.nomeImagem());
 
-        planta.setTempoColheita(plantaDTO.tempoColheita());
+        //planta.setTempoColheita(plantaDTO.tempoColheita());
 
         planta.setDescricao(plantaDTO.descricao());
 
         planta.setTipoSolo(tipoSoloRepository.findById(plantaDTO.tipoSolo()));
 
-        planta.setEspecie(especieRepository.findById(plantaDTO.especie()));
+        planta.setEspecie(especieService.insert(plantaDTO.especie()));
 
-        tamanhoArray = planta.getVideos().size();
+        //tamanhoArray = planta.getVideos().size();
 
-        while (tamanhoArray != 0) {
+        // while (tamanhoArray != 0) {
             
-            planta.getVideos().remove(0);
+        //     planta.getVideos().remove(0);
 
-            tamanhoArray--;
-        }
+        //     tamanhoArray--;
+        // }
 
-        for (Long genero : plantaDTO.videos()) {
+        // for (Long genero : plantaDTO.videos()) {
             
-            planta.plusVideos(videoRepository.findById(genero));
-        }
+        //     planta.plusVideos(videoRepository.findById(genero));
+        // }
 
-        tamanhoArray = planta.getPragas().size();
+        // tamanhoArray = planta.getPragas().size();
 
-        while (tamanhoArray != 0) {
+        // while (tamanhoArray != 0) {
             
-            planta.getPragas().remove(0);
+        //     planta.getPragas().remove(0);
 
-            tamanhoArray--;
-        }
+        //     tamanhoArray--;
+        // }
 
-        for (Long praga : plantaDTO.pragas()) {
+        // for (Long praga : plantaDTO.pragas()) {
             
-            planta.plusPragas(pragaRepository.findById(praga));
-        }
+        //     planta.plusPragas(pragaRepository.findById(praga));
+        // }
 
         return planta;
     }
