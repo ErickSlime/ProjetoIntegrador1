@@ -29,7 +29,20 @@ export class PragaService {
   }
 
   save(praga: Praga): Observable<Praga> {
-    return this.http.post<Praga>(`${this.baseURL}/pragas`, praga);
+    const especieDto = {
+      nome: praga.especie.nome,
+      caracteristica: praga.especie.caracteristicas,
+      familia: praga.especie.familia.id
+    }
+
+    const pragaDto = {
+      nome: praga.nome,
+      nomeImagem: praga.nomeImagem,
+      descricao: praga.descricao,
+      prevencao: null,
+      especie: especieDto
+    }
+    return this.http.post<Praga>(`${this.baseURL}/pragas`, pragaDto);
   }
 
   update(praga: Praga): Observable<Praga> {

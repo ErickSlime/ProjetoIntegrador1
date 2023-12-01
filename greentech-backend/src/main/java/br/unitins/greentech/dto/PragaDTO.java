@@ -4,7 +4,7 @@ public record PragaDTO (
     String nome,
     String nomeImagem,
     String descricao,
-    Long especie
+    EspecieDTO especie
 ) {
     
 }

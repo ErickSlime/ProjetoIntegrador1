@@ -101,8 +101,6 @@ public class PlantaImplService implements PlantaService {
     @Override
     @Transactional
     public Planta update(Long id, PlantaDTO plantaDTO) {
-
-        int tamanhoArray;
         
         Planta planta = plantaRepository.findById(id);
 

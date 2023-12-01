@@ -6,6 +6,7 @@ import br.unitins.greentech.dto.PragaDTO;
 import br.unitins.greentech.model.Praga;
 import br.unitins.greentech.repository.EspecieRepository;
 import br.unitins.greentech.repository.PragaRepository;
+import br.unitins.greentech.repository.PrevencaoRepository;
 import io.quarkus.panache.common.Sort;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
@@ -19,7 +20,16 @@ public class PragaImplService implements PragaService {
     PragaRepository pragaRepository;
     
     @Inject
+    PrevencaoRepository prevencaoRepository;
+
+    @Inject
     EspecieRepository especieRepository;
+
+    @Inject
+    EspecieService especieService;
+
+    @Inject
+    PrevencaoService prevencaoService;
     
     private Sort sort = Sort.by("id").ascending();
 
@@ -58,7 +68,7 @@ public class PragaImplService implements PragaService {
 
         praga.setDescricao(pragaDTO.descricao());
 
-        praga.setEspecie(especieRepository.findById(pragaDTO.especie()));
+        praga.setEspecie(especieService.insert(pragaDTO.especie()));
 
         pragaRepository.persist(praga);
 
@@ -68,6 +78,7 @@ public class PragaImplService implements PragaService {
     @Override
     @Transactional
     public Praga update(Long id, PragaDTO pragaDTO) {
+        
         
         Praga praga = pragaRepository.findById(id);
 
@@ -80,7 +91,7 @@ public class PragaImplService implements PragaService {
 
         praga.setDescricao(pragaDTO.descricao());
 
-        praga.setEspecie(especieRepository.findById(pragaDTO.especie()));
+        praga.setEspecie(especieService.insert(pragaDTO.especie()));
 
         return praga;
     }
