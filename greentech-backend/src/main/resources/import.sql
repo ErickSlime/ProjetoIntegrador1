@@ -38,6 +38,26 @@ INSERT INTO especie (nome, caracteristicas, id_familia)
 VALUES ('Tomate Cereja', 'Frutos vermelhos e pequenos, com sabor doce e ácido.', 2);
 
 
+-- Pragas 
+
+
+-- Famílias
+INSERT INTO familia (nome, caracteristicas)
+VALUES ('Aphididae', 'Insectos pequenos, de corpo mole e geralmente de coloração verde, amarela ou preta. Possuem um aparelho sugador que utilizam para se alimentar da seiva das plantas.'),
+       ('Lepidoptera', 'Insectos com corpo alongado e coberto por escamas ou pelos. Possuem quatro asas, que são membranosas e geralmente de coloração brilhante.'),
+       ('Acari', 'Artrópodes de corpo pequeno e de forma oval ou redonda. Possuem quatro pares de patas e geralmente são de coloração avermelhada ou marrom.'),
+       ('Coccus', 'Insectos pequenos, de corpo mole e coberto por uma camada cerosa. Possuem um aparelho sugador que utilizam para se alimentar da seiva das plantas.'),
+       ('Gastropoda', 'Moluscos de corpo mole e alongado. Possuem uma concha externa, que pode ser ausente ou reduzida.');
+
+-- Espécies
+INSERT INTO especie (nome, caracteristicas, id_familia)
+VALUES ('Pulgão-verde-do-feijoeiro', 'Pulgão de coloração verde claro, que se alimenta da seiva das folhas, caules e vagens do feijoeiro. Causa danos às plantas, provocando o amarelecimento e a queda das folhas.', 3),
+       ('Lagarta-da-batata', 'Lagarta de coloração verde, que se alimenta das folhas e caules da batata. Causa danos às plantas, provocando o amarelecimento e a queda das folhas.', 4),
+       ('Ácaro-rajado-do-algodão', 'Ácaro de coloração avermelhada, que se alimenta das folhas do algodão. Causa danos às plantas, provocando o amarelecimento e a queda das folhas.', 5),
+       ('Conchonilha-branca-do-quisqualo', 'Conchonilha de coloração branca, que se alimenta das folhas e caules do quisqualo. Causa danos às plantas, provocando o amarelecimento e a queda das folhas.', 6),
+       ('Lesma-do-tomateiro', 'Lesma de coloração marrom, que se alimenta das folhas, caules e frutos do tomateiro. Causa danos às plantas, provocando o amarelecimento e a queda das folhas.', 7);
+
+
 
 INSERT INTO planta (nome , nomeimagem, tempocolheita, descricao, id_tipo_solo, id_especie)
 VALUES ('Alface', 'https://scfoods.fbitsstatic.net/img/p/alface-crespa-higienizada-250g-72022/258671.jpg?w=800&h=800&v=no-change&qs=ignore', '2023-10-20', 'Planta hortícola de folhas verdes e crocantes, rica em vitaminas e minerais.', 1, 1);
@@ -71,19 +91,24 @@ VALUES ('Dica 5', 'https://marketingpoliticohoje.com.br/wp-content/uploads/2019/
 
 
 INSERT INTO Praga (nome, nomeImagem, descricao, id_especie)
-VALUES ('Pulgão', 'https://blog.aegro.com.br/wp-content/uploads/2020/05/combate-ao-pulgao.jpg', 'Pequeno inseto que se alimenta da seiva das plantas.', 1);
+VALUES ('Pulgão', 'https://blog.aegro.com.br/wp-content/uploads/2020/05/combate-ao-pulgao.jpg',
+ 'O pulgão é um inseto pequeno, de corpo mole, que se alimenta da seiva das plantas. É uma praga importante na agricultura e na jardinagem, pois pode causar grandes danos às plantações.', 6);
 
 INSERT INTO Praga (nome, nomeImagem, descricao, id_especie)
-VALUES ('Lagarta', 'https://terramagna.com.br/wp-content/uploads/2022/08/Lagarta-verde-folha.jpg', 'Larva de borboletas e mariposas que se alimentam das folhas das plantas.', 2);
+VALUES ('Lagarta', 'https://terramagna.com.br/wp-content/uploads/2022/08/Lagarta-verde-folha.jpg',
+ 'Lagartas são a forma larval de borboletas, mariposas e algumas espécies de besouros. Elas são uma praga importante na agricultura e na jardinagem, pois podem causar grandes danos às plantações.', 7);
 
 INSERT INTO Praga (nome, nomeImagem, descricao, id_especie)
-VALUES ('Ácaro', 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Rust_Mite%2C_Aceria_anthocoptes.jpg/1200px-Rust_Mite%2C_Aceria_anthocoptes.jpg', 'Pequeno aracnídeo que se aloja nas plantas e suga sua seiva.', 3);
+VALUES ('Ácaro', 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Rust_Mite%2C_Aceria_anthocoptes.jpg/1200px-Rust_Mite%2C_Aceria_anthocoptes.jpg',
+ 'Ácaros são aracnídeos microscópicos que se alimentam da seiva das plantas. Eles são uma praga importante na agricultura e na jardinagem, pois podem causar grandes danos às plantações.', 8);
 
 INSERT INTO Praga (nome, nomeImagem, descricao, id_especie)
-VALUES ('Cochonilha', 'https://terramagna.com.br/wp-content/uploads/2022/05/praga-cochonilha-branca.png', 'Inseto que forma uma crosta algodoada nas plantas e se alimenta de sua seiva.', 4);
+VALUES ('Cochonilha', 'https://terramagna.com.br/wp-content/uploads/2022/05/praga-cochonilha-branca.png',
+ 'A cochonilha é um inseto sugador da ordem Hemiptera, que se alimenta da seiva das plantas. É uma praga importante na agricultura e na jardinagem, pois pode causar grandes danos às plantações.', 9);
 
 INSERT INTO Praga (nome, nomeImagem, descricao, id_especie)
-VALUES ('Lesma', 'https://meusbichos.com.br/wp-content/uploads/2022/02/COMBATE-84-1024x576.jpg', 'Molusco que se alimenta de folhas e frutos das plantas.', 5);
+VALUES ('Lesma', 'https://meusbichos.com.br/wp-content/uploads/2022/02/COMBATE-84-1024x576.jpg',
+ 'Lesmas são moluscos gastrópodes terrestres que não possuem concha externa. Lesmas são animais de hábito noturno e se alimentam de uma grande variedade de plantas, incluindo hortaliças, frutas, verduras e plantas ornamentais.', 10);
 
 
 INSERT INTO Video (nome, urlVideo, descricao)
@@ -101,3 +126,59 @@ VALUES ('Como Poda Corretamente Suas Plantas', 'https://www.youtube.com/embed/4a
 INSERT INTO Video (nome, urlVideo, descricao)
 VALUES ('Como Transplantar Suas Plantas', 'https://www.youtube.com/embed/4aj5IDEJh_I', 'Neste vídeo, aprenda como transplantar suas plantas com segurança e sucesso, garantindo um ambiente propício para seu crescimento.');
 
+
+
+INSERT INTO planta_praga (id_planta, id_praga)
+VALUES (1,1);
+
+INSERT INTO planta_praga (id_planta, id_praga)
+VALUES (1,2);
+
+INSERT INTO planta_praga (id_planta, id_praga)
+VALUES (1,3);
+
+
+INSERT INTO planta_praga (id_planta, id_praga)
+VALUES (2,4);
+
+
+INSERT INTO planta_praga (id_planta, id_praga)
+VALUES (2,5);
+
+
+INSERT INTO planta_praga (id_planta, id_praga)
+VALUES (3,3);
+
+
+
+INSERT INTO planta_praga (id_planta, id_praga)
+VALUES (3,1);
+
+
+
+INSERT INTO planta_praga (id_planta, id_praga)
+VALUES (4,2);
+
+
+
+INSERT INTO planta_praga (id_planta, id_praga)
+VALUES (4,5);
+
+
+
+INSERT INTO planta_praga (id_planta, id_praga)
+VALUES (5,3);
+
+
+
+INSERT INTO planta_praga (id_planta, id_praga)
+VALUES (5,2);
+
+
+INSERT INTO planta_praga (id_planta, id_praga)
+VALUES (5,1);
+
+
+
+INSERT INTO planta_praga (id_planta, id_praga)
+VALUES (4,3);

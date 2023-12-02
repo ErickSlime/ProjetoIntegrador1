@@ -62,3 +62,62 @@ ul {
 }
 
 
+.container {
+    padding: 20px;
+}
+
+.responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+
+.centered-text {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo {
+    color: black; /* Cor do texto */
+    padding: 30px; /* Espaçamento interno */
+    text-align: center; /* Alinhar o texto ao centro */
+  }
+  
+  /* Estilos para o título h1 no cabeçalho */
+  .titulo h1 {
+    font-size: 50px; /* Tamanho da fonte */
+    margin: 0; /* Remover margens padrão */
+  }
+
+  .my-big-icon {
+    font-size: 26px;
+  }
+
+  .barra-de-pesquisa {
+    width: 80%;
+    padding-left: 20%;
+    height: 40px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .input-de-pesquisa {
+    width: 80%;
+    height: 40px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333333;
+  }
+
+  .imgCard {
+    width: 100%;
+    height: 65%;
+  }
+
+

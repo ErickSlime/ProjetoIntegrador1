@@ -1,6 +1,12 @@
 package br.unitins.greentech.dto;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 import br.unitins.greentech.model.Planta;
+import br.unitins.greentech.model.Praga;
 
 public record PlantaResponseDTO(
         Long id,
@@ -8,7 +14,8 @@ public record PlantaResponseDTO(
         String nomeImagem,
         String descricao,
         TipoSoloResponseDTO tipoSolo,
-        EspecieResponseDTO especie) {
+        EspecieResponseDTO especie,
+        List<Praga> pragas) {
 
     public static PlantaResponseDTO valueOf(Planta planta) {
         return new PlantaResponseDTO(
@@ -17,7 +24,8 @@ public record PlantaResponseDTO(
                 planta.getNomeImagem(),
                 planta.getDescricao(),
                 TipoSoloResponseDTO.valueOf(planta.getTipoSolo()),
-                EspecieResponseDTO.valueOf(planta.getEspecie()));
+                EspecieResponseDTO.valueOf(planta.getEspecie()),
+                planta.getPragas());
     }
 
 }

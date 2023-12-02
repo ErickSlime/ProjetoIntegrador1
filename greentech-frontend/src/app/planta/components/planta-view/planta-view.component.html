@@ -7,10 +7,24 @@
         <section class="planta">
             <img src={{planta.nomeImagem}} alt="Planta Exemplo">
             <h2>{{planta.especie.nome}}</h2>
-            <p>{{planta.descricao}}</p>
+            <h3>Caracteristicas da Especie: {{planta.especie.caracteristicas}}</h3>
+            <h3>{{planta.descricao}}</h3>
 
             <h3>Tipo de Solo: {{planta.tipoSolo.nome}}</h3>
             <h3>Classificação de Solo: {{planta.tipoSolo.classificacao}}</h3>
+            <h2>Possiveis Pragas:</h2>
+            <div class="container responsive-grid">
+                <mat-card *ngFor="let card of cards()">
+            
+                    <img class="imgCard" mat-card-image src={{card.urlImg}} >
+                   
+                    <mat-card-title class="centered-text"> {{card.titulo}} </mat-card-title>
+            
+                    <mat-card-footer>
+                        <a routerLink="/pragas/view/{{card.id}}"><button mat-flat-button color="primary" style="width: 100%; padding: 16px;">Ver mais ...</button></a>
+                    </mat-card-footer>
+                </mat-card>
+            </div>
         </section>
     </main>
 </body>

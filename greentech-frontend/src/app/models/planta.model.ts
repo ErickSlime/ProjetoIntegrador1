@@ -1,4 +1,5 @@
 import { Especie } from "./especie.model";
+import { Praga } from "./praga.model";
 import { TipoSolo } from "./tipo-solo.model";
 
 export class Planta {
@@ -8,4 +9,5 @@ export class Planta {
     descricao!: string;
     tipoSolo!: TipoSolo;
     especie!: Especie;
+    pragas!: Praga[];
 }

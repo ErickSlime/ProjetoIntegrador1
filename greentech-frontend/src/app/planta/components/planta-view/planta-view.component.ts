@@ -1,9 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Especie } from 'src/app/models/especie.model';
 import { Planta } from 'src/app/models/planta.model';
+import { Praga } from 'src/app/models/praga.model';
 import { TipoSolo } from 'src/app/models/tipo-solo.model';
 import { PlantaService } from 'src/app/services/planta.service';
+
+type Card = {
+  id: number;
+  titulo: string;
+  descricao: string;
+  urlImg: string;
+}
 
 @Component({
   selector: 'app-planta-view',
@@ -13,6 +21,9 @@ import { PlantaService } from 'src/app/services/planta.service';
 export class PlantaViewComponent implements OnInit{
 
   planta!: Planta;
+
+  cards = signal<Card[]> ([]);
+  pragas: Praga[] = [];
 
   especies: Especie[] = [];
   tiposolos: TipoSolo[] = [];
@@ -29,7 +40,21 @@ export class PlantaViewComponent implements OnInit{
   initializeForm() {
 
     this.planta = this.activatedRoute.snapshot.data['planta'];
+    this.carregarCards();
 
+  }
+
+  carregarCards() {
+    const cards: Card[] = [];
+    this.planta.pragas.forEach(praga => {
+      cards.push({
+        id: praga.id,
+        titulo: praga.nome,
+        descricao: praga.descricao,
+        urlImg: praga.nomeImagem
+      });
+    });
+    this.cards.set(cards);
   }
 
 }
