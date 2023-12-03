@@ -11,6 +11,9 @@ header {
     color: white;
     text-align: center;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 main {
@@ -37,6 +40,12 @@ main {
 h1 {
     font-size: 24px;
     color: white;
+    text-align: center;
+}
+
+.header-title {
+    max-width: 40%; /* ou qualquer valor que você ache adequado */
+    margin: 0 auto;
 }
 
 h2 {
@@ -61,4 +70,20 @@ ul {
     margin-left: 20px;
 }
 
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.edit-button {
+    background-color: white;
+    color: #4CAF50; /* Green color for edit button */
+}
+
+.delete-button {
+    background-color: white;
+}
+
+/* ... rest of your styles ... */
 

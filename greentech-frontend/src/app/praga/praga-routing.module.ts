@@ -9,7 +9,8 @@ import { pragaResolver } from './resolver/praga.resolver';
 const routes: Routes = [
   {path: 'card-list', component: PragaCardListComponent},
   {path: 'view/:id', component: PragaViewComponent, resolve: {praga: pragaResolver}},
-  {path: 'praga-form', component: PragaFormComponent}
+  {path: 'praga-form', component: PragaFormComponent},
+  {path: 'edit/:id', component: PragaFormComponent, resolve: {praga: pragaResolver}}
 ];
 
 @NgModule({

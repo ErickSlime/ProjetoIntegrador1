@@ -9,7 +9,8 @@ import { dicaResolver } from './resolver/dica.resolver';
 const routes: Routes = [
   {path: 'card-list', component: DicaCardListComponent},
   {path: 'view/:id', component: DicaViewComponent, resolve: {dica: dicaResolver}},
-  {path: 'dica-form', component: DicaFormComponent}
+  {path: 'dica-form', component: DicaFormComponent},
+  {path: 'edit/:id', component: DicaFormComponent, resolve: {dica: dicaResolver}}
 ];
 
 @NgModule({

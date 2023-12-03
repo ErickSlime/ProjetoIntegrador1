@@ -1,6 +1,16 @@
 <body>
     <header>
-        <h1>{{video.nome}}</h1>
+        <div class="header-title"><h1>{{video.nome}}</h1></div>
+        <div class="header-buttons">
+            <a routerLink="/videos/edit/{{video.id}}">
+                <button mat-icon-button aria-label="button para editar registro" color="primary" class="edit-button">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </a>
+            <button mat-icon-button aria-label="button para deletar registro" (click)="excluir(video)" color="warn" class="delete-button">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
     </header>
 
     <main>

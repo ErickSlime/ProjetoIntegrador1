@@ -61,6 +61,11 @@ ul {
     margin-left: 20px;
 }
 
+.header-title {
+    max-width: 40%; /* ou qualquer valor que você ache adequado */
+    margin: 0 auto;
+}
+
 
 .container {
     padding: 20px;
@@ -119,5 +124,30 @@ ul {
     width: 100%;
     height: 65%;
   }
+
+  /* Add styles for the edit and delete buttons */
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.edit-button {
+    background-color: white;
+    color: #4CAF50; /* Green color for edit button */
+}
+
+.delete-button {
+    background-color: white;
+}
+
+/* ... rest of your styles ... */
+
+/* Estilos atualizados para o cabeçalho e botões */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 

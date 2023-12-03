@@ -28,4 +28,19 @@ export class VideoViewComponent {
 
   }
 
+  excluir(video: Video) {
+    if (confirm('Deseja realmente excluir este video?')) {
+      this.videoService.delete(video).subscribe(
+        () => {
+          console.log('Video excluído com sucesso!');
+          this.router.navigate(['/videos/card-list']);
+        },
+        (error) => {
+          console.error('Erro ao excluir o video:', error);
+          // Handle the error as needed.
+        }
+      );
+    }
+  }
+
 }

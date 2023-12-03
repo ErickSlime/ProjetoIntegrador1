@@ -57,4 +57,19 @@ export class PlantaViewComponent implements OnInit{
     this.cards.set(cards);
   }
 
+  excluir(planta: Planta) {
+    if (confirm('Deseja realmente excluir a planta?')) {
+      this.plantaService.delete(planta).subscribe(
+        () => {
+          console.log('Planta excluída com sucesso!');
+          this.router.navigate(['/plantas/card-list']);
+        },
+        (error) => {
+          console.error('Erro ao excluir a planta:', error);
+          // Handle the error as needed.
+        }
+      );
+    }
+  }
+
 }

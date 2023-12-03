@@ -1,11 +1,23 @@
 <body>
     <header>
-        <h1>{{planta.nome}}</h1>
+        <div class="header-title">
+            <h1>{{planta.nome}}</h1>
+        </div>
+        <div class="header-buttons">
+            <a routerLink="/plantas/edit/{{planta.id}}">
+                <button mat-icon-button aria-label="button para editar registro" color="primary" class="edit-button">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </a>
+            <button mat-icon-button aria-label="button para deletar registro" (click)="excluir(planta)" color="warn" class="delete-button">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
     </header>
 
     <main>
         <section class="planta">
-            <img src={{planta.nomeImagem}} alt="Planta Exemplo">
+            <img src={{planta.nomeImagem}} alt="Planta Exemplo" >
             <h2>{{planta.especie.nome}}</h2>
             <h3>Caracteristicas da Especie: {{planta.especie.caracteristicas}}</h3>
             <h3>{{planta.descricao}}</h3>

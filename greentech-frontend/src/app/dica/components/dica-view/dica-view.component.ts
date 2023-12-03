@@ -27,5 +27,20 @@ export class DicaViewComponent {
     this.dica = this.activatedRoute.snapshot.data['dica'];
 
   }
+  
+  excluir(dica: Dica) {
+    if (confirm('Deseja realmente excluir a dica?')) {
+      this.dicaService.delete(dica).subscribe(
+        () => {
+          console.log('Dica excluída com sucesso!');
+          this.router.navigate(['/dicas/card-list']);
+        },
+        (error) => {
+          console.error('Erro ao excluir a dica:', error);
+          // Handle the error as needed.
+        }
+      );
+    }
+  }
 
 }

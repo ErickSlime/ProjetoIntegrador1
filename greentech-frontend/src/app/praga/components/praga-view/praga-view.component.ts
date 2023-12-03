@@ -27,4 +27,19 @@ export class PragaViewComponent implements OnInit {
 
   }
 
+  excluir(praga: Praga) {
+    if (confirm('Deseja realmente excluir a praga?')) {
+      this.pragaService.delete(praga).subscribe(
+        () => {
+          console.log('Praga excluída com sucesso!');
+          this.router.navigate(['/pragas/card-list']);
+        },
+        (error) => {
+          console.error('Erro ao excluir a praga:', error);
+          // Handle the error as needed.
+        }
+      );
+    }
+  }
+
 }

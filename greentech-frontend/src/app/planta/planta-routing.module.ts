@@ -9,7 +9,8 @@ import { plantaResolver } from './resolver/planta.resolver';
 const routes: Routes = [
   {path: 'card-list', component: PlantaCardListComponent},
   {path: 'view/:id', component: PlantaViewComponent, resolve: {planta: plantaResolver}}, 
-  {path: 'planta-form', component: PlantaFormComponent}
+  {path: 'planta-form', component: PlantaFormComponent},
+  {path: 'edit/:id', component: PlantaFormComponent, resolve: {planta: plantaResolver}}
 ];
 
 @NgModule({

@@ -37,6 +37,7 @@ main {
 h1 {
     font-size: 24px;
     color: white;
+    text-align: center;
 }
 
 h2 {
@@ -59,6 +60,34 @@ p {
 ul {
     list-style-type: disc;
     margin-left: 20px;
+}
+.header-title {
+    margin: 0 auto;
+    max-width: 40%; /* ou qualquer valor que você ache adequado */
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.edit-button {
+    background-color: white;
+    color: #4CAF50; /* Green color for edit button */
+}
+
+.delete-button {
+    background-color: white;
+}
+
+/* ... rest of your styles ... */
+
+/* Estilos atualizados para o cabeçalho e botões */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 
