@@ -57,7 +57,7 @@ constructor(private formBuilder: FormBuilder,
       tipoSolo: [null],
       especie: this.formBuilder.group({
         nome:[ '', Validators.required],
-        caracteristica:[ '', Validators.required],
+        caracteristicas:[ '', Validators.required],
         familia:[null]
       })
     })
@@ -78,7 +78,7 @@ initializeForm(){
     tipoSolo:[tipoSolo],
     especie: this.formBuilder.group({
         nome: [(planta && planta.especie && planta.especie.nome) || '', Validators.required],
-        caracteristica: [ (planta && planta.especie && planta.especie.caracteristicas) || '', Validators.required],
+        caracteristicas: [ (planta && planta.especie && planta.especie.caracteristicas) || '', Validators.required],
         familia: [familia]
     }),
   })
@@ -91,7 +91,7 @@ initializeForm(){
     tipoSolo:[tipoSolo],
     especie: this.formBuilder.group({
       nome: [(planta && planta.especie && planta.especie.nome) || '', Validators.required],
-      caracteristica: [ (planta && planta.especie && planta.especie.caracteristicas) || '', Validators.required],
+      caracteristicas: [ (planta && planta.especie && planta.especie.caracteristicas) || '', Validators.required],
       familia: [familia]
   }),
   })
@@ -108,7 +108,11 @@ salvar() {
           this.router.navigateByUrl('/plantas/card-list');
         }}
         )
-      }
+      } else {
+        this.plantaService.update(planta).subscribe({
+          next: (plantaCadastrado) => {
+            this.router.navigateByUrl('/plantas/card-list');
+          }})}
       }
 }
 

@@ -39,7 +39,13 @@ export class DicaService {
   }
 
   update(dica: Dica): Observable<Dica> {
-    return this.http.put<Dica>(`${this.baseURL}/dicas/${dica.id}`, dica);
+    const obj = {
+      nome: dica.nome,
+      descricao: dica.descricao,
+      nomeImagem: dica.nomeImagem,
+      planta: dica.planta.id
+    }
+    return this.http.put<Dica>(`${this.baseURL}/dicas/${dica.id}`, obj);
   }
 
   delete(dica: Dica): Observable<any> {

@@ -31,7 +31,7 @@ export class PlantaService {
   save(planta: Planta): Observable<Planta> {
     const especieDto = {
       nome: planta.especie.nome,
-      caracteristica: planta.especie.caracteristicas,
+      caracteristicas: planta.especie.caracteristicas,
       familia: planta.especie.familia.id
     }
     const plantaDto = {
@@ -48,7 +48,22 @@ export class PlantaService {
   }
 
   update(planta: Planta): Observable<Planta> {
-    return this.http.put<Planta>(`${this.baseURL}/plantas/${planta.id}`, planta);
+    const especieDto = {
+      nome: planta.especie.nome,
+      caracteristicas: planta.especie.caracteristicas,
+      familia: planta.especie.familia.id
+    }
+    const plantaDto = {
+      nome: planta.nome,
+      nomeImagem: planta.nomeImagem,
+      tempoColheita: null,
+      descricao: planta.descricao,
+      tipoSolo: planta.tipoSolo.id,
+      especie: especieDto,
+      videos: null,
+      pragas:null
+    }
+    return this.http.put<Planta>(`${this.baseURL}/plantas/${planta.id}`, plantaDto);
   }
 
   delete(planta: Planta): Observable<any> {

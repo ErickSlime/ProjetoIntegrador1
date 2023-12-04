@@ -48,7 +48,7 @@ constructor(private formBuilder: FormBuilder,
       descricao:[ '', Validators.required],
       especie: this.formBuilder.group({
         nome:[ '', Validators.required],
-        caracteristica:[ '', Validators.required],
+        caracteristicas:[ '', Validators.required],
         familia:[null]
       })
     })
@@ -66,7 +66,7 @@ initializeForm(){
     descricao: [(praga && praga.descricao) ? praga.descricao : '', Validators.required],
     especie: this.formBuilder.group({
       nome: [(praga && praga.especie && praga.especie.nome) || '', Validators.required],
-      caracteristica: [ (praga && praga.especie && praga.especie.caracteristicas) || '', Validators.required],
+      caracteristicas: [ (praga && praga.especie && praga.especie.caracteristicas) || '', Validators.required],
       familia: [familia]
   }),
   })
@@ -78,7 +78,7 @@ initializeForm(){
     descricao: [(praga && praga.descricao) ? praga.descricao : '', Validators.required],
     especie: this.formBuilder.group({
       nome: [(praga && praga.especie && praga.especie.nome) || '', Validators.required],
-      caracteristica: [ (praga && praga.especie && praga.especie.caracteristicas) || '', Validators.required],
+      caracteristicas: [ (praga && praga.especie && praga.especie.caracteristicas) || '', Validators.required],
       familia: [familia]
   }),
   })
@@ -95,7 +95,11 @@ salvar() {
           this.router.navigateByUrl('/pragas/card-list');
         }}
         )
-      }
+      } else {
+        this.pragaService.update(praga).subscribe({
+          next: (pragaCadastrado) => {
+            this.router.navigateByUrl('/pragas/card-list');
+          }})}
       }
 }
 

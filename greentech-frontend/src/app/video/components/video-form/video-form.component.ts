@@ -63,7 +63,11 @@ salvar() {
           this.router.navigateByUrl('/videos/card-list');
         }}
         )
-      }
+      } else {
+        this.videoService.update(video).subscribe({
+          next: (videoCadastrado) => {
+            this.router.navigateByUrl('/videos/card-list');
+          }})}
       }
 }
 

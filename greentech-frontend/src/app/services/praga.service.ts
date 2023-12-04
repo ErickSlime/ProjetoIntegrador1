@@ -31,7 +31,7 @@ export class PragaService {
   save(praga: Praga): Observable<Praga> {
     const especieDto = {
       nome: praga.especie.nome,
-      caracteristica: praga.especie.caracteristicas,
+      caracteristicas: praga.especie.caracteristicas,
       familia: praga.especie.familia.id
     }
 
@@ -46,7 +46,20 @@ export class PragaService {
   }
 
   update(praga: Praga): Observable<Praga> {
-    return this.http.put<Praga>(`${this.baseURL}/pragas/${praga.id}`, praga);
+    const especieDto = {
+      nome: praga.especie.nome,
+      caracteristicas: praga.especie.caracteristicas,
+      familia: praga.especie.familia.id
+    }
+
+    const pragaDto = {
+      nome: praga.nome,
+      nomeImagem: praga.nomeImagem,
+      descricao: praga.descricao,
+      prevencao: null,
+      especie: especieDto
+    }
+    return this.http.put<Praga>(`${this.baseURL}/pragas/${praga.id}`, pragaDto);
   }
 
   delete(praga: Praga): Observable<any> {

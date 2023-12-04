@@ -72,7 +72,11 @@ salvar() {
           this.router.navigateByUrl('/dicas/card-list');
         }}
         )
-      }
+      } else {
+        this.dicaService.update(dica).subscribe({
+          next: (dicaCadastrado) => {
+            this.router.navigateByUrl('/dicas/card-list');
+          }})}
       }
 }
 
